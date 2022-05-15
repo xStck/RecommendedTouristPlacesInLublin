@@ -113,7 +113,8 @@ struct LoginView: View {
     }
     
      
-    func addCategoryItemsToDB(categoryName: String, placeNameArr: [String], placeDescArr: [String], placeLongitudeArr: [String], placeLattitudeArr[String]){
+    func addCategoryItemsToDB(categoryName: String, placeNameArr: [String], placeDescArr: [String], placeLongitudeArr: [String], placeLattitudeArr: [String]){
+        let newPlace = Place(context: viewContext)
         for i in 0..<placeNameArr.count{
             newPlace.id = UUID()
             newPlace.name = placeNameArr[i]
