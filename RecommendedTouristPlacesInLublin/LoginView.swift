@@ -107,12 +107,33 @@ struct LoginView: View {
         addCategoryItemsToDB(categoryName: "Teatr", placeNameArr: placeNameArr, placeDescArr: placeDescArr, placeLongitudeArr: placeLongitudeArr, placeLattitudeArr: placeLattitudeArr)
         
         //Dodawanie opinii do zabytków
-        
-        
-        
+        var rating: [Int] = [5,4,3,5,5,5,4,5,4,5,3,2,5,4,3,5,5,5,5,5,5,5,5,5,4,5,4,3,3,1,5,4,5,5,5,1]
+        var content: [String] = ["Piekny budynek chociaż przydałby się remont. Mimo wszystko perła Lublina. Cudowny!!","Fajnie wyglada jako ruinka niestety nie ma mozliwosci wejscia na teren palacu","Bardzo zaniedbane miejsce z niezwykłą historią...","Zachwycająca, majestatyczna katedra z kopią Całunu Turyńskiego. Przed katedrą duży parking, wejście bez barier.","Przepiękna Archikatedra warto do niej pójść","Najwyższej próby malarstwo iluzjonistyczne.","Warto zobaczyć także ładny mural zaraz obok wieży.","Można zaglądnąć w starą basztę od wewnątrz","Przez tyle lat nie wiedziałem o istnieniu tego miejsca a jest naprawdę ciekawe.","Super lokal, pyszne i konkretne żarcie, dobre drinki i bardzo przyjemny lokal.","Zaczynam się zastanawiać czy właściciele nie zaczynają wpadać w rutynę i czy jedzenie nie staje się gorsze....?","Niestety ale po dzisiejszej wizycie nie mogę zbyt wiele dobrego powiedzieć. Czas oczekiwania na jedzenie to 1,5 godziny.","Rewelacja! Przemiła obsługa - to pierwsze co nas zachęciło. Pyszne jedzenie - zdecydowanie podstawa wszystkiego!","Niezłe miejsce. Obsługa uprzejma, lecz niektóre panie niezbyt orientują się w menu.","Mila obsługa. Zarowno wystrój resrauracji jak i dania tylko ok, po przeczytanych opiniach spodziewalismy się znacznie wiecej.","Przemiła obsługa, ogromne porcje i bardzo przyzwoite ceny. Bardzo miłe akcenty w postaci czekadełka i czegoś na osłodę rachunku.","Kiedyś to była stołówka, teraz droga restauracja. Ale fajna! Duże porcje, wszystko bardzo smaczne, przemiła obsługa.","By odwiedzić to miejsce skusiły nas bardzo dobre opinie, co prawda miejsce nie jest w samym sercu starego miasta lecz mimo to warto podejść parę metrów do tego miejsca.","To było coś niesamowitego!","Dobre spektakle, widać dużo serca i pracy.","wspaniały studencki teatr","Jeden z najlepszych teatrów niezawodowych w Lublinie","To było niesamowite doznanie estetyczno wizualne.","Teatr wysokich lotów","Miejsce bardzo sympatyczne, trochę ciężko trafić bo szatnia jest w innym miejscu, a scena w innym.","Szczerze polecam. Miejsce warte odwiedzenia. Dzieci zachwycone. Przedstawienie super.","Spektakle nie są tanie ale są rewelacyjne. Super scenografia, stroje...","Sam seans był bardzo dobry i w przystępnej cenie ale popcorn nachos i tak dalej były stanowczo za drogie.","Ogólnie jest OK. Sale są super wygodne a ceny zestawów całkiem przystępne. Duży minus natomiast za oszczędzanie na klimatyzacji (w połowie seansu zrobiło sie juz trochę duszno).","30 minut reklam to na prawdę gruba przesada, będąc w tym kinie człowiek ma wrażenie ze przyszedł oglądać reklamy a nie seans, w dodatku zachowanie personelu i obsługa klientów… porażka.","Nasze ulubione kino :), ale 4DX mnie rozczarował, fotele za bardzo się ruszają podczas filmu, bardzo to rozprasza podczas śledzenia fabuły.","Kino jak kino, dźwięk i obraz OK (sala 1). Fotele wygodne. Obsługa uprzejma. Czysto. Ceny biletów i w barku u konkurencji chyba trochę niższe.","Najlepsze Kino w Lublinie Miła obsługa duża sala kinowa idealna głośność bajek i filmów bardzo wygodne fotele wszędzie czysto jedyny minus to drogie jedzenie.","Ciekawa inicjatywa. Razem z dziewczyną kilka razy mieliśmy przyjemność bycia tu na seansach.","Jedno z fajniejszych miejsc w Lublinie w okresie letnim. Niskie ceny piwa i przekąsek, ciekawy repertuar.","Opryskliwa obsługa. Zostałem odesłany przez obsługę baru po dodatkowe leżaki  do siedzenia (sytuacja braku miejsc) i zatrzymany przez ochronę po chwili z pytaniem \"mamy się przejść do baru i zapytać czy to prawda\"."]
+        addOpinionsToItem("NIEWIEM", userNameArr, rating, content)
     }
     
-     
+   func addOpinionsToItem(placeName: String, userNameArr: [String], placeRatingArr: [String], placeContentArr: [String]){
+        let newOpinion = Opinion(context: viewContext)
+        var userName = ""
+        for i in 0..<placeRatingArr.count{
+            newOpinion.id = UUID()
+            newOpinion.rating  = placeRatingArr[i]
+            newOpinion.content  = placeContentArr[i]
+                
+            userName = userNameArr[i%3]
+            newOpinion.user  = getUserByUserName<User>(userName: userName)
+            newOpinion.place  = getPlaceByName<Place>(placeName: placeName)
+            do{
+                try viewContext.save()
+            }catch{
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+            newOpinion = Opinion(context: viewContext)
+        }
+    }
+    
+ 
     func addCategoryItemsToDB(categoryName: String, placeNameArr: [String], placeDescArr: [String], placeLongitudeArr: [String], placeLattitudeArr: [String]){
         let newPlace = Place(context: viewContext)
         for i in 0..<placeNameArr.count{
