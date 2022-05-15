@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
+		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
+		C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */; };
+		C88DE3F228314C04009378BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3F128314C04009378BF /* ContentView.swift */; };
+		C88DE3F428314C05009378BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F328314C05009378BF /* Assets.xcassets */; };
+		C88DE3F728314C05009378BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F628314C05009378BF /* Preview Assets.xcassets */; };
+		C88DE3FA28314C05009378BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F828314C05009378BF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendedTouristPlacesInLublin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C88DE3EC28314C04009378BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C88DE3EF28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecommendedTouristPlacesInLublin.xcdatamodel; sourceTree = "<group>"; };
+		C88DE3F128314C04009378BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C88DE3F328314C05009378BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C88DE3F628314C05009378BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C88DE3F928314C05009378BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C88DE3FB28314C05009378BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C88DE3E428314C03009378BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C88DE3DE28314C03009378BF = {
+			isa = PBXGroup;
+			children = (
+				C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */,
+				C88DE3E828314C03009378BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C88DE3E828314C03009378BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE3EA28314C04009378BF /* AppDelegate.swift */,
+				C88DE3EC28314C04009378BF /* SceneDelegate.swift */,
+				C88DE3F128314C04009378BF /* ContentView.swift */,
+				C88DE3F328314C05009378BF /* Assets.xcassets */,
+				C88DE3F828314C05009378BF /* LaunchScreen.storyboard */,
+				C88DE3FB28314C05009378BF /* Info.plist */,
+				C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */,
+				C88DE3F528314C05009378BF /* Preview Content */,
+			);
+			path = RecommendedTouristPlacesInLublin;
+			sourceTree = "<group>";
+		};
+		C88DE3F528314C05009378BF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE3F628314C05009378BF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C88DE3E628314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C88DE3FE28314C05009378BF /* Build configuration list for PBXNativeTarget "RecommendedTouristPlacesInLublin" */;
+			buildPhases = (
+				C88DE3E328314C03009378BF /* Sources */,
+				C88DE3E428314C03009378BF /* Frameworks */,
+				C88DE3E528314C03009378BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecommendedTouristPlacesInLublin;
+			productName = RecommendedTouristPlacesInLublin;
+			productReference = C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C88DE3DF28314C03009378BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = NalepaDawid_OgorzalekDaniel_OleszkoTomasz;
+				TargetAttributes = {
+					C88DE3E628314C03009378BF = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C88DE3E228314C03009378BF /* Build configuration list for PBXProject "RecommendedTouristPlacesInLublin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C88DE3DE28314C03009378BF;
+			productRefGroup = C88DE3E828314C03009378BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C88DE3E628314C03009378BF /* RecommendedTouristPlacesInLublin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C88DE3E528314C03009378BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C88DE3FA28314C05009378BF /* LaunchScreen.storyboard in Resources */,
+				C88DE3F728314C05009378BF /* Preview Assets.xcassets in Resources */,
+				C88DE3F428314C05009378BF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C88DE3E328314C03009378BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */,
+				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,
+				C88DE3F228314C04009378BF /* ContentView.swift in Sources */,
+				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C88DE3F828314C05009378BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C88DE3F928314C05009378BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C88DE3FC28314C05009378BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C88DE3FD28314C05009378BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C88DE3FF28314C05009378BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RecommendedTouristPlacesInLublin/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RecommendedTouristPlacesInLublin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NalepaDawid-OgorzalekDaniel-OleszkoTomasz.RecommendedTouristPlacesInLublin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C88DE40028314C05009378BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RecommendedTouristPlacesInLublin/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RecommendedTouristPlacesInLublin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NalepaDawid-OgorzalekDaniel-OleszkoTomasz.RecommendedTouristPlacesInLublin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C88DE3E228314C03009378BF /* Build configuration list for PBXProject "RecommendedTouristPlacesInLublin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C88DE3FC28314C05009378BF /* Debug */,
+				C88DE3FD28314C05009378BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C88DE3FE28314C05009378BF /* Build configuration list for PBXNativeTarget "RecommendedTouristPlacesInLublin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C88DE3FF28314C05009378BF /* Debug */,
+				C88DE40028314C05009378BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C88DE3EF28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodel */,
+			);
+			currentVersion = C88DE3EF28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodel */;
+			path = RecommendedTouristPlacesInLublin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C88DE3DF28314C03009378BF /* Project object */;
+}
