@@ -21,8 +21,10 @@ struct ContentView: View {
                 List{
                     ForEach(categories, id: \.self){
                         category in
-                        HStack{
-                            Text(category.name).padding(10).font(.title.weight(.bold)).foregroundColor(.blue)
+                        NavigationLink(destination: CategoryDetailView(category: category.name)){
+                            HStack{
+                                Text(category.name).padding(10).font(.title.weight(.bold)).foregroundColor(.blue)
+                            }
                         }
                     }
                 }.navigationTitle("Wybierz kategorię")
@@ -31,6 +33,16 @@ struct ContentView: View {
     }
 }
  
+struct CategoryDetailView: View{
+    var category: String
+    
+    var body: some View{
+        VStack{
+            Text(category}.font(.title)
+        }
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
