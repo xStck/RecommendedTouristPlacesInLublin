@@ -20,7 +20,6 @@ extension Opinion {
     @NSManaged public var content: String?
     @NSManaged public var id: UUID?
     @NSManaged public var rating: Int16
-    @NSManaged public var username: String?
     @NSManaged public var place: Place?
     @NSManaged public var user: User?
 

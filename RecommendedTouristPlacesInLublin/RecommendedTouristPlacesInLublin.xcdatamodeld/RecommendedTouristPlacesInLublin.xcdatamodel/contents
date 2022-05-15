@@ -9,7 +9,6 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="username" optional="YES" attributeType="String"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="opinion" inverseEntity="Place"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="opinion" inverseEntity="User"/>
     </entity>
@@ -29,7 +28,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-18.0703125" positionY="101.91796875" width="128" height="88"/>
-        <element name="Opinion" positionX="-484.6328125" positionY="-217.61328125" width="128" height="133"/>
+        <element name="Opinion" positionX="-484.6328125" positionY="-217.61328125" width="128" height="118"/>
         <element name="Place" positionX="-483.43359375" positionY="56.72265625" width="128" height="148"/>
         <element name="User" positionX="-82.953125" positionY="-170.91796875" width="128" height="88"/>
     </elements>
