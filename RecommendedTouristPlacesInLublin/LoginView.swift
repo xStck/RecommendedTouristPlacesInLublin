@@ -121,8 +121,8 @@ struct LoginView: View {
             newOpinion.content  = placeContentArr[i]
                 
             userName = userNameArr[i%3]
-            newOpinion.user  = getUserByUserName<User>(userName: userName)
-            newOpinion.place  = getPlaceByName<Place>(placeName: placeName)
+            newOpinion.user  = getUserByUserName(userName: userName)
+            newOpinion.place  = getPlaceByName(placeName: placeName)
             do{
                 try viewContext.save()
             }catch{
