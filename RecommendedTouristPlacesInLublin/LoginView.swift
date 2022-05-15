@@ -126,7 +126,7 @@ struct LoginView: View {
             if(i%3==0 && i != 0){
                 placeNameArr.removeFirst()
             }
-            newOpinion.place  = getPlaceByName(placeName: placeName[0])
+            newOpinion.place  = getPlaceByName(placeName: placeNameArr[0])
             
             do{
                 try viewContext.save()
