@@ -10,7 +10,8 @@ import SwiftUI
 
 struct FooterView: View {
     var body: some View {
-        VStack{
+        HStack{
+            Text("Autorzy:")
             Text("Nalepa Dawid - 92963\nOleszko Tomasz - 92974\nOgorzałek Daniel - 92972")
         }.frame(minWidth: 0, maxWidth: .infinity).background(Color.black).foregroundColor(Color.white)
     }

@@ -25,6 +25,7 @@
 		C8D408ED283180D700D95895 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E5283180D700D95895 /* User+CoreDataProperties.swift */; };
 		C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408F52831907E00D95895 /* Opinion+CoreDataClass.swift */; };
 		C8D408F82831907E00D95895 /* Opinion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408F62831907E00D95895 /* Opinion+CoreDataProperties.swift */; };
+		C8D408FC2831AE1E00D95895 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408FB2831AE1E00D95895 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C8D408E5283180D700D95895 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8D408F52831907E00D95895 /* Opinion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C8D408F62831907E00D95895 /* Opinion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8D408FB2831AE1E00D95895 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C80D5698283169B900C461AD /* FooterView.swift */,
+				C8D408FB2831AE1E00D95895 /* HeaderView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
 				C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */,
 				C8D408EB283180D700D95895 /* Category+CoreDataProperties.swift in Sources */,
+				C8D408FC2831AE1E00D95895 /* HeaderView.swift in Sources */,
 				C8D408EC283180D700D95895 /* User+CoreDataClass.swift in Sources */,
 				C8D408F82831907E00D95895 /* Opinion+CoreDataProperties.swift in Sources */,
 				C8D408EA283180D700D95895 /* Category+CoreDataClass.swift in Sources */,

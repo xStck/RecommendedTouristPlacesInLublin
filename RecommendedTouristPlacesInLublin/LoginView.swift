@@ -30,7 +30,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack(){
-            
+            HeaderView()
             Spacer()
             Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
             TextField("Nazwa użytkownika", text: $userUserName).underlineTextFieldStyle()
