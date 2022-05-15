@@ -34,8 +34,12 @@ struct LoginView: View {
             Spacer()
             Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
             TextField("Nazwa użytkownika", text: $userUserName).underlineTextFieldStyle()
-            Button(action: addData){
-                Text("Przejdź dalej").buttonCustomStyle()
+            if(userUserName.isEmpty){
+                Text("Aby przejść dalej, podaj swoją nazwę użytkownika").foregroundColor(Color.red)
+            }else{
+                Button(action: addData){
+                    Text("Przejdź dalej").buttonCustomStyle()
+                }
             }
             
             Spacer()
@@ -118,6 +122,20 @@ struct LoginView: View {
         }else{
             print("Już coś jest")
         }
+        
+        if(getUserByUserName(userName: userUserName) == nil){
+            var newUser = User(context: viewContext)
+            newUser.username = userUserName
+            do{
+                try viewContext.save()
+            }catch{
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+            newUser = User(context: viewContext)
+        }else{
+            print("Taki użytkownik już istnieje")
+        }
     }
     
     func getCategoryByName(categoryName: String) -> Category{
@@ -144,22 +162,21 @@ struct LoginView: View {
         }catch{
             print("fetch task failed", error)
         }
-        
         return aPlace!
     }
     
-    func getUserByUserName(userName: String) -> User{
+    func getUserByUserName(userName: String) -> User?{
         var aUser: User?
         do{
             let userFetchRequest: NSFetchRequest<User> = User.fetchRequest()
             userFetchRequest.predicate = NSPredicate(format: "username == %@", userName)
             let fetchedResults = try viewContext.fetch(userFetchRequest)
-            aUser = fetchedResults.first!
+            aUser = fetchedResults.first
         }catch{
             print("fetch task failed", error)
         }
         
-        return aUser!
+        return aUser
     }
     
     func addCategoryItemsToDB(categoryName: String, placeNameArr: [String], placeDescArr: [String], placeLongitudeArr: [String], placeLattitudeArr: [String]){

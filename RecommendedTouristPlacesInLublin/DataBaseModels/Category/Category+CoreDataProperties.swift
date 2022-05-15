@@ -21,7 +21,12 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var place: NSSet?
     
-    
+    public var placeArray: [Place]{
+        let set = place as? Set<Place> ?? []
+        return set.sorted{
+            $0.name! < $1.name!
+        }
+    }
 
 }
 

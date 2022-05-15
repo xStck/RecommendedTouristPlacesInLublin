@@ -25,6 +25,12 @@ extension Place {
     @NSManaged public var category: Category?
     @NSManaged public var opinion: NSSet?
 
+    public var opinionArray: [Opinion]{
+        let set = opinion as? Set<Opinion> ?? []
+        return set.sorted{
+            $0.rating < $1.rating
+        }
+    }
 }
 
 // MARK: Generated accessors for opinion
