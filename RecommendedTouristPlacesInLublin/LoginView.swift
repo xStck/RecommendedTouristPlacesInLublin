@@ -113,7 +113,7 @@ struct LoginView: View {
         addOpinionsToItem(placeNameArr, userNameArr, rating, content)
     }
     
-   func addOpinionsToItem(placeName: [String], userNameArr: [String], placeRatingArr: [String], placeContentArr: [String]){
+   func addOpinionsToItem(placeNameArr: [String], userNameArr: [String], placeRatingArr: [String], placeContentArr: [String]){
         var newOpinion = Opinion(context: viewContext)
         var userName = ""
         for i in 0..<placeRatingArr.count{
@@ -123,9 +123,11 @@ struct LoginView: View {
                 
             userName = userNameArr[i%3]
             newOpinion.user  = getUserByUserName(userName: userName)
+            if(i%3==0 && i != 0){
+                placeNameArr.removeFirst()
+            }
             newOpinion.place  = getPlaceByName(placeName: placeName[0])
-            if(i%3==0)
-            placeName.removeFirst()
+            
             do{
                 try viewContext.save()
             }catch{
