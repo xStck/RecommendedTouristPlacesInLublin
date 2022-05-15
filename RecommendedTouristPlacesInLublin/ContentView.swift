@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var userName: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack(){
+            Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
+            TextField("Nazwa użytkownika", text: $userName).underlineTextFieldStyle()
+            Button(action: {print("")}){
+                Text("Przejdź dalej").buttonStyle()
+            }
+            Spacer()
+            Text("Test")
+        }
+
     }
 }
 

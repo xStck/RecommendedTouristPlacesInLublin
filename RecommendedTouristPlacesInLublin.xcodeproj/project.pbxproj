@@ -15,6 +15,7 @@
 		C88DE3F728314C05009378BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F628314C05009378BF /* Preview Assets.xcassets */; };
 		C88DE3FA28314C05009378BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F828314C05009378BF /* LaunchScreen.storyboard */; };
 		C88DE403283152BF009378BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88DE402283152BF009378BF /* MapKit.framework */; };
+		C88DE4062831616B009378BF /* customStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE4052831616B009378BF /* customStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C88DE3F928314C05009378BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C88DE3FB28314C05009378BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88DE402283152BF009378BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C88DE4052831616B009378BF /* customStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
 			isa = PBXGroup;
 			children = (
+				C88DE40428316131009378BF /* CustomStyles */,
 				C88DE3EA28314C04009378BF /* AppDelegate.swift */,
 				C88DE3EC28314C04009378BF /* SceneDelegate.swift */,
 				C88DE3F128314C04009378BF /* ContentView.swift */,
@@ -88,6 +91,14 @@
 				C88DE402283152BF009378BF /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C88DE40428316131009378BF /* CustomStyles */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE4052831616B009378BF /* customStyles.swift */,
+			);
+			path = CustomStyles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,
 				C88DE3F228314C04009378BF /* ContentView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
+				C88DE4062831616B009378BF /* customStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
