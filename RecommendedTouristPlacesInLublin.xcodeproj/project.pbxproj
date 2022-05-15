@@ -14,6 +14,7 @@
 		C88DE3F428314C05009378BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F328314C05009378BF /* Assets.xcassets */; };
 		C88DE3F728314C05009378BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F628314C05009378BF /* Preview Assets.xcassets */; };
 		C88DE3FA28314C05009378BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F828314C05009378BF /* LaunchScreen.storyboard */; };
+		C88DE403283152BF009378BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88DE402283152BF009378BF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C88DE3F628314C05009378BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C88DE3F928314C05009378BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C88DE3FB28314C05009378BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C88DE402283152BF009378BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88DE403283152BF009378BF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */,
 				C88DE3E828314C03009378BF /* Products */,
+				C88DE401283152BE009378BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +80,14 @@
 				C88DE3F628314C05009378BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C88DE401283152BE009378BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE402283152BF009378BF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
