@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80D5699283169BA00C461AD /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D5698283169B900C461AD /* FooterView.swift */; };
 		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
 		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
 		C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80D5698283169B900C461AD /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendedTouristPlacesInLublin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88DE3EC28314C04009378BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
 			isa = PBXGroup;
 			children = (
+				C8D408DF28316D1400D95895 /* Models */,
 				C88DE40428316131009378BF /* CustomStyles */,
 				C88DE3EA28314C04009378BF /* AppDelegate.swift */,
 				C88DE3EC28314C04009378BF /* SceneDelegate.swift */,
@@ -99,6 +102,14 @@
 				C88DE4052831616B009378BF /* customStyles.swift */,
 			);
 			path = CustomStyles;
+			sourceTree = "<group>";
+		};
+		C8D408DF28316D1400D95895 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C80D5698283169B900C461AD /* FooterView.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */,
 				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,
 				C88DE3F228314C04009378BF /* ContentView.swift in Sources */,
+				C80D5699283169BA00C461AD /* FooterView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
 				C88DE4062831616B009378BF /* customStyles.swift in Sources */,
 			);

@@ -13,13 +13,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack(){
+            Spacer()
             Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
             TextField("Nazwa użytkownika", text: $userName).underlineTextFieldStyle()
             Button(action: {print("")}){
-                Text("Przejdź dalej").buttonStyle()
+                Text("Przejdź dalej").buttonCustomStyle()
             }
             Spacer()
-            Text("Test")
+            FooterView()
         }
 
     }

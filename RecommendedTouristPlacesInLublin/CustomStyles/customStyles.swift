@@ -18,9 +18,12 @@ extension View {
             .padding(10)
     }
     
-    func buttonStyle() -> some View {
+    func buttonCustomStyle() -> some View {
         self
-            .font(.title).padding(10).background(Color.blue).cornerRadius(40).foregroundColor(.white)
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(8)
     }
     
     
