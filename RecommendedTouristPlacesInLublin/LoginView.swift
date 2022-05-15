@@ -114,6 +114,8 @@ struct LoginView: View {
     }
     
    func addOpinionsToItem(placeNameArr: [String], userNameArr: [String], placeRatingArr: [String], placeContentArr: [String]){
+       
+        var placeNameArrCopy = placeNameArr.copy()
         var newOpinion = Opinion(context: viewContext)
         var userName = ""
         for i in 0..<placeRatingArr.count{
@@ -124,9 +126,9 @@ struct LoginView: View {
             userName = userNameArr[i%3]
             newOpinion.user  = getUserByUserName(userName: userName)
             if(i%3==0 && i != 0){
-                placeNameArr.removeFirst()
+                placeNameArrCopy.removeFirst()
             }
-            newOpinion.place  = getPlaceByName(placeName: placeNameArr[0])
+            newOpinion.place  = getPlaceByName(placeName: placeNameArrCopy[0])
             
             do{
                 try viewContext.save()
