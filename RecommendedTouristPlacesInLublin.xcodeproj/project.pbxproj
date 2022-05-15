@@ -11,12 +11,20 @@
 		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
 		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
 		C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */; };
-		C88DE3F228314C04009378BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3F128314C04009378BF /* ContentView.swift */; };
+		C88DE3F228314C04009378BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3F128314C04009378BF /* LoginView.swift */; };
 		C88DE3F428314C05009378BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F328314C05009378BF /* Assets.xcassets */; };
 		C88DE3F728314C05009378BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F628314C05009378BF /* Preview Assets.xcassets */; };
 		C88DE3FA28314C05009378BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88DE3F828314C05009378BF /* LaunchScreen.storyboard */; };
 		C88DE403283152BF009378BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88DE402283152BF009378BF /* MapKit.framework */; };
 		C88DE4062831616B009378BF /* customStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE4052831616B009378BF /* customStyles.swift */; };
+		C8D408E8283180D700D95895 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E0283180D700D95895 /* Place+CoreDataClass.swift */; };
+		C8D408E9283180D700D95895 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E1283180D700D95895 /* Place+CoreDataProperties.swift */; };
+		C8D408EA283180D700D95895 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E2283180D700D95895 /* Category+CoreDataClass.swift */; };
+		C8D408EB283180D700D95895 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E3283180D700D95895 /* Category+CoreDataProperties.swift */; };
+		C8D408EC283180D700D95895 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E4283180D700D95895 /* User+CoreDataClass.swift */; };
+		C8D408ED283180D700D95895 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E5283180D700D95895 /* User+CoreDataProperties.swift */; };
+		C8D408EE283180D700D95895 /* Opinion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E6283180D700D95895 /* Opinion+CoreDataClass.swift */; };
+		C8D408EF283180D700D95895 /* Opinion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408E7283180D700D95895 /* Opinion+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +33,21 @@
 		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88DE3EC28314C04009378BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C88DE3EF28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecommendedTouristPlacesInLublin.xcdatamodel; sourceTree = "<group>"; };
-		C88DE3F128314C04009378BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C88DE3F128314C04009378BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C88DE3F328314C05009378BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88DE3F628314C05009378BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C88DE3F928314C05009378BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C88DE3FB28314C05009378BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88DE402283152BF009378BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C88DE4052831616B009378BF /* customStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customStyles.swift; sourceTree = "<group>"; };
+		C8D408E0283180D700D95895 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C8D408E1283180D700D95895 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8D408E2283180D700D95895 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C8D408E3283180D700D95895 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8D408E4283180D700D95895 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C8D408E5283180D700D95895 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8D408E6283180D700D95895 /* Opinion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C8D408E7283180D700D95895 /* Opinion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +82,12 @@
 		C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
 			isa = PBXGroup;
 			children = (
+				C8D408F0283180DD00D95895 /* DataBaseModels */,
 				C8D408DF28316D1400D95895 /* Models */,
 				C88DE40428316131009378BF /* CustomStyles */,
 				C88DE3EA28314C04009378BF /* AppDelegate.swift */,
 				C88DE3EC28314C04009378BF /* SceneDelegate.swift */,
-				C88DE3F128314C04009378BF /* ContentView.swift */,
+				C88DE3F128314C04009378BF /* LoginView.swift */,
 				C88DE3F328314C05009378BF /* Assets.xcassets */,
 				C88DE3F828314C05009378BF /* LaunchScreen.storyboard */,
 				C88DE3FB28314C05009378BF /* Info.plist */,
@@ -110,6 +127,53 @@
 				C80D5698283169B900C461AD /* FooterView.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C8D408F0283180DD00D95895 /* DataBaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				C8D408F4283180F700D95895 /* Place */,
+				C8D408F3283180F100D95895 /* Category */,
+				C8D408F2283180ED00D95895 /* User */,
+				C8D408F1283180E800D95895 /* Opinion */,
+			);
+			path = DataBaseModels;
+			sourceTree = "<group>";
+		};
+		C8D408F1283180E800D95895 /* Opinion */ = {
+			isa = PBXGroup;
+			children = (
+				C8D408E6283180D700D95895 /* Opinion+CoreDataClass.swift */,
+				C8D408E7283180D700D95895 /* Opinion+CoreDataProperties.swift */,
+			);
+			path = Opinion;
+			sourceTree = "<group>";
+		};
+		C8D408F2283180ED00D95895 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C8D408E4283180D700D95895 /* User+CoreDataClass.swift */,
+				C8D408E5283180D700D95895 /* User+CoreDataProperties.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		C8D408F3283180F100D95895 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C8D408E2283180D700D95895 /* Category+CoreDataClass.swift */,
+				C8D408E3283180D700D95895 /* Category+CoreDataProperties.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C8D408F4283180F700D95895 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				C8D408E0283180D700D95895 /* Place+CoreDataClass.swift */,
+				C8D408E1283180D700D95895 /* Place+CoreDataProperties.swift */,
+			);
+			path = Place;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +248,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */,
+				C8D408E9283180D700D95895 /* Place+CoreDataProperties.swift in Sources */,
+				C8D408ED283180D700D95895 /* User+CoreDataProperties.swift in Sources */,
 				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,
-				C88DE3F228314C04009378BF /* ContentView.swift in Sources */,
+				C8D408E8283180D700D95895 /* Place+CoreDataClass.swift in Sources */,
+				C88DE3F228314C04009378BF /* LoginView.swift in Sources */,
 				C80D5699283169BA00C461AD /* FooterView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
+				C8D408EF283180D700D95895 /* Opinion+CoreDataProperties.swift in Sources */,
+				C8D408EE283180D700D95895 /* Opinion+CoreDataClass.swift in Sources */,
+				C8D408EB283180D700D95895 /* Category+CoreDataProperties.swift in Sources */,
+				C8D408EC283180D700D95895 /* User+CoreDataClass.swift in Sources */,
+				C8D408EA283180D700D95895 /* Category+CoreDataClass.swift in Sources */,
 				C88DE4062831616B009378BF /* customStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
