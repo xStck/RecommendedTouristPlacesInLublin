@@ -14,6 +14,7 @@ struct ContentView: View {
         Category(name: "Teatry", id: 2),
         Category(name: "Kina", id: 3)
     ]
+    
     var body: some View {
         VStack{
             NavigationView{
@@ -21,10 +22,10 @@ struct ContentView: View {
                     ForEach(categories, id: \.self){
                         category in
                         HStack{
-                            Text(category.name).buttonCustomStyle()
+                            Text(category.name).padding(10).font(.title.weight(.bold)).foregroundColor(.blue)
                         }
                     }
-                }.navigationTitle("Wybierz Kategorie")
+                }.navigationTitle("Wybierz kategorię")
             }
         }
     }
