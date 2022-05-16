@@ -1,0 +1,2 @@
+# RecommendedTouristPlacesInLublin
+Main app
