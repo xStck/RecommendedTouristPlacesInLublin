@@ -19,7 +19,6 @@ struct PlaceView: View {
     private var opinions: FetchedResults<Opinion>
     
     var selectedCategoryName: String = ""
-    @State var totalRating: Double = 0.0
     var body: some View {
         VStack{
             Spacer()
