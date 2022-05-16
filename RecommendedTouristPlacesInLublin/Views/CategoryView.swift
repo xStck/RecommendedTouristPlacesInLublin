@@ -16,16 +16,17 @@ struct CategoryView: View {
     
     var body: some View {
         VStack{
-            HeaderView()
             Spacer()
             List {
                 ForEach(categories, id: \.id){category in
-                    Text(category.name!)
+                    NavigationLink(destination: PlaceView(selectedCategoryName: category.name!)){
+                        Text(category.name!)
+                    }
                 }
             }
             Spacer()
             FooterView()
-        }
+        }.navigationBarTitle("Kategorie")
     }
 }
 
