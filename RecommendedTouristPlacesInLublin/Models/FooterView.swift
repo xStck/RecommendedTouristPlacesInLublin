@@ -13,7 +13,7 @@ struct FooterView: View {
         HStack{
             Text("Autorzy:")
             Text("Nalepa Dawid - 92963\nOleszko Tomasz - 92974\nOgorzałek Daniel - 92972")
-        }.frame(minWidth: 0, maxWidth: .infinity).background(Color.black).foregroundColor(Color.white)
+            }.frame(minWidth: 0, maxWidth: .infinity).background(Color.black).foregroundColor(Color.white).padding(0)
     }
 }
 

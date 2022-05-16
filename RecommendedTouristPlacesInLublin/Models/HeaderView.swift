@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HeaderView: View {
     var body: some View {
-        Text("Turystyczny Lublin").fontWeight(.bold).font(.title).frame(minWidth: 0, maxWidth:  .infinity).background(Color.blue).foregroundColor(Color.white)
+        Text("Turystyczny Lublin").fontWeight(.bold).font(.title).frame(minWidth: 0, maxWidth:  .infinity).background(Color.blue).foregroundColor(Color.white).padding(0)
     }
 }
 

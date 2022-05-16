@@ -27,6 +27,9 @@ struct LoginView: View {
     
     
     @State private var userUserName: String = ""
+    @State private var hideTitleBar: Bool = false
+    
+    
     var body: some View {
         NavigationView{
             VStack(){
@@ -34,22 +37,22 @@ struct LoginView: View {
                 Spacer()
                 Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
                 TextField("Nazwa użytkownika", text: $userUserName).underlineTextFieldStyle()
+                
                 if(userUserName.isEmpty){
                     Text("Aby przejść dalej, podaj swoją nazwę użytkownika").foregroundColor(Color.red)
                 }else{
                     
-                    Button(action: addData){
-                        NavigationLink(destination: CategoryView()){
-                                Text("Przejdź dalej").buttonCustomStyle()
-                        }
-                    }
+                    NavigationLink(destination: CategoryView()){
+                        Text("Przejdź dalej").buttonCustomStyle()
+                    }.simultaneousGesture(TapGesture().onEnded{_ in
+                        self.addUser()
+                        self.hideTitleBar = false
+                    })
                 }
-                
                 Spacer()
-                FooterView()
-                }
+                FooterView().navigationBarTitle("Ustaw nazwę użytkownika").navigationBarHidden(hideTitleBar)
+            }.onAppear{self.addData(); self.hideTitleBar.toggle()}
         }
-        
     }
     
     private func addData(){
@@ -60,6 +63,9 @@ struct LoginView: View {
             //Dodawanie użytkowników
             let userNameArr: [String] = ["Andrzej", "Piotr", "Jakub"]
             for i in 0..<userNameArr.count{
+                if(i != 0){
+                    newUser = User(context: viewContext)
+                }
                 newUser.id = UUID()
                 newUser.username = userNameArr[i]
                 do{
@@ -68,12 +74,14 @@ struct LoginView: View {
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
-                newUser = User(context: viewContext)
             }
             
             //Dodawanie do bazy danych kategorii
             let categoryNameArr: [String] = ["Zabytek", "Restauracja", "Teatr", "Kino"]
-            for i in 0..<categoryNameArr.count{
+            for i in 0..<4{
+                if(i != 0){
+                    newCategory = Category(context: viewContext)
+                }
                 newCategory.id = UUID()
                 newCategory.name = categoryNameArr[i]
                 do{
@@ -82,7 +90,6 @@ struct LoginView: View {
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
-                newCategory = Category(context: viewContext)
             }
             
             //Dodawanie do bazy danych zabytków
@@ -127,8 +134,12 @@ struct LoginView: View {
             print("Już coś jest")
         }
         
+    }
+    
+    func addUser(){
         if(getUserByUserName(userName: userUserName) == nil){
-            var newUser = User(context: viewContext)
+            let newUser = User(context: viewContext)
+            newUser.id = UUID()
             newUser.username = userUserName
             do{
                 try viewContext.save()
@@ -136,7 +147,6 @@ struct LoginView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-            newUser = User(context: viewContext)
         }else{
             print("Taki użytkownik już istnieje")
         }
@@ -186,6 +196,9 @@ struct LoginView: View {
     func addCategoryItemsToDB(categoryName: String, placeNameArr: [String], placeDescArr: [String], placeLongitudeArr: [String], placeLattitudeArr: [String]){
         var newPlace = Place(context: viewContext)
         for i in 0..<placeNameArr.count{
+            if(i != 0){
+                newPlace = Place(context: viewContext)
+            }
             newPlace.id = UUID()
             newPlace.name = placeNameArr[i]
             newPlace.desc = placeDescArr[i]
@@ -198,7 +211,6 @@ struct LoginView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-            newPlace = Place(context: viewContext)
         }
     }
     
@@ -206,6 +218,9 @@ struct LoginView: View {
         var newOpinion = Opinion(context: viewContext)
         var userName = ""
         for i in 0..<placeRatingArr.count{
+            if(i != 0){
+                newOpinion = Opinion(context: viewContext)
+            }
             newOpinion.id = UUID()
             newOpinion.rating  = placeRatingArr[i]
             newOpinion.content  = placeContentArr[i]
@@ -223,7 +238,6 @@ struct LoginView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-            newOpinion = Opinion(context: viewContext)
         }
     }
 }

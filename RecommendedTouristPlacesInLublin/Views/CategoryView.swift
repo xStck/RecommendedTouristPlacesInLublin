@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CategoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -14,19 +15,17 @@ struct CategoryView: View {
     private var categories: FetchedResults<Category>
     
     var body: some View {
-
-
-
-             List {
+        VStack{
+            HeaderView()
+            Spacer()
+            List {
                 ForEach(categories, id: \.id){category in
-                        
                     Text(category.name!)
-                        
-                 }
+                }
             }
-
-
-
+            Spacer()
+            FooterView()
+        }
     }
 }
 

@@ -86,18 +86,17 @@
 		C88DE3E928314C03009378BF /* RecommendedTouristPlacesInLublin */ = {
 			isa = PBXGroup;
 			children = (
+				C8D5832A2832F77A00DD444B /* Views */,
 				C8D408F0283180DD00D95895 /* DataBaseModels */,
 				C8D408DF28316D1400D95895 /* Models */,
 				C88DE40428316131009378BF /* CustomStyles */,
 				C88DE3EA28314C04009378BF /* AppDelegate.swift */,
 				C88DE3EC28314C04009378BF /* SceneDelegate.swift */,
-				C88DE3F128314C04009378BF /* LoginView.swift */,
 				C88DE3F328314C05009378BF /* Assets.xcassets */,
 				C88DE3F828314C05009378BF /* LaunchScreen.storyboard */,
 				C88DE3FB28314C05009378BF /* Info.plist */,
 				C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */,
 				C88DE3F528314C05009378BF /* Preview Content */,
-				C86AE7B328325DF200A96D40 /* CategoryView.swift */,
 			);
 			path = RecommendedTouristPlacesInLublin;
 			sourceTree = "<group>";
@@ -180,6 +179,15 @@
 				C8D408E1283180D700D95895 /* Place+CoreDataProperties.swift */,
 			);
 			path = Place;
+			sourceTree = "<group>";
+		};
+		C8D5832A2832F77A00DD444B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C88DE3F128314C04009378BF /* LoginView.swift */,
+				C86AE7B328325DF200A96D40 /* CategoryView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

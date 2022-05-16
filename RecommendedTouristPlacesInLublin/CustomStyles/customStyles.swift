@@ -7,8 +7,6 @@
 //
 import SwiftUI
 
-
-
 extension View {
     func underlineTextFieldStyle() -> some View {
         self
