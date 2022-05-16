@@ -27,23 +27,27 @@ struct LoginView: View {
     
     
     @State private var userUserName: String = ""
-    
     var body: some View {
-        VStack(){
-            HeaderView()
-            Spacer()
-            Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
-            TextField("Nazwa użytkownika", text: $userUserName).underlineTextFieldStyle()
-            if(userUserName.isEmpty){
-                Text("Aby przejść dalej, podaj swoją nazwę użytkownika").foregroundColor(Color.red)
-            }else{
-                Button(action: addData){
-                    Text("Przejdź dalej").buttonCustomStyle()
+        NavigationView{
+            VStack(){
+                HeaderView()
+                Spacer()
+                Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title)
+                TextField("Nazwa użytkownika", text: $userUserName).underlineTextFieldStyle()
+                if(userUserName.isEmpty){
+                    Text("Aby przejść dalej, podaj swoją nazwę użytkownika").foregroundColor(Color.red)
+                }else{
+                    
+                    Button(action: addData){
+                        NavigationLink(destination: CategoryView()){
+                                Text("Przejdź dalej").buttonCustomStyle()
+                        }
+                    }
                 }
-            }
-            
-            Spacer()
-            FooterView()
+                
+                Spacer()
+                FooterView()
+                }
         }
         
     }

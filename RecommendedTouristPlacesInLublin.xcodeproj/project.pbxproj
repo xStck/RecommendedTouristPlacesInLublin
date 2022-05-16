@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80D5699283169BA00C461AD /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D5698283169B900C461AD /* FooterView.swift */; };
+		C86AE7B428325DF200A96D40 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86AE7B328325DF200A96D40 /* CategoryView.swift */; };
 		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
 		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
 		C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		C80D5698283169B900C461AD /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		C86AE7B328325DF200A96D40 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendedTouristPlacesInLublin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88DE3EC28314C04009378BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				C88DE3FB28314C05009378BF /* Info.plist */,
 				C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */,
 				C88DE3F528314C05009378BF /* Preview Content */,
+				C86AE7B328325DF200A96D40 /* CategoryView.swift */,
 			);
 			path = RecommendedTouristPlacesInLublin;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,
 				C8D408E8283180D700D95895 /* Place+CoreDataClass.swift in Sources */,
 				C88DE3F228314C04009378BF /* LoginView.swift in Sources */,
+				C86AE7B428325DF200A96D40 /* CategoryView.swift in Sources */,
 				C80D5699283169BA00C461AD /* FooterView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
 				C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */,
