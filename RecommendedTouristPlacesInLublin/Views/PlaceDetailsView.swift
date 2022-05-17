@@ -17,6 +17,7 @@ struct PlaceDetailsView: View {
     var placeName: String = ""
     var placeLongitude: String = ""
     var placeLatitude: String = ""
+    @State private var showAddOpinionSheet: Bool = false
     @State var counter: Int = 0
     @State var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     @State var opinions: [Opinion] = []
@@ -33,7 +34,7 @@ struct PlaceDetailsView: View {
                 VStack(alignment: .leading){
                     Text("LOKALIZACJA").font(.title).foregroundColor(Color.blue)
                     MapCreator(myAnnotation: $myAnnotation).frame(width: UIScreen.main.bounds.size.width, height: CGFloat(200), alignment: .center)
-                }
+                }.onAppear(perform: self.addOpinions)
                 Spacer()
                 VStack(alignment: .leading){
                     Text("OPINIE").font(.title).foregroundColor(Color.blue)
@@ -44,7 +45,7 @@ struct PlaceDetailsView: View {
                             Text("Ocena: ").fontWeight(.bold)
                             Text("\(opinions[counter].rating)")
                             Text("Opinia:").fontWeight(.bold)
-                            Text("\(opinions[counter].content!)")
+                            Text("\(opinions[counter].content! )")
                         }
                     }.gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({value in
                         if value.translation.width < 0 && self.counter < self.getPlaceByName(viewContext: self.viewContext, placeName: self.placeName).opinionArray.count - 1{
@@ -54,6 +55,16 @@ struct PlaceDetailsView: View {
                             self.counter -= 1
                         }
                     }))
+                    VStack{
+                        Button(action: {
+                            self.showAddOpinionSheet.toggle()
+                        }){
+                            Text("Dodaj opinię").buttonCustomStyle()
+                        }
+                    }.sheet(isPresented: $showAddOpinionSheet){
+                        AddOpinionView(placeName: self.placeName).environment(\.managedObjectContext, self.viewContext)
+                
+                    }
                 }
             }
             Spacer()
@@ -63,6 +74,8 @@ struct PlaceDetailsView: View {
     private func addVariables(){
         self.myAnnotation = MyAnnotation(title: placeName, subtitle: "",
                                          coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLatitude)!, longitude: CLLocationDegrees(placeLongitude)!))
+    }
+    private func addOpinions(){
         self.opinions = getPlaceByName(viewContext: viewContext, placeName: placeName).opinionArray
     }
 }
