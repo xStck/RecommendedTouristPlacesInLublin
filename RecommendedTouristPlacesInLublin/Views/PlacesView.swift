@@ -34,14 +34,8 @@ struct PlacesView: View {
     }
     
     func calculateRating(place: Place) -> Double{
-        var meanRating: Double = 0.0
         let opinions: [Opinion] = getPlaceByName(viewContext: viewContext, placeName: place.name!).opinionArray
-        
-        for i in 0..<opinions.count{
-            meanRating += Double(opinions[i].rating)
-        }
-        
-        return meanRating/Double(opinions.count)
+        return  Double(opinions.reduce(0) { $0 + $1.rating })/Double(opinions.count)
     }
 }
 
