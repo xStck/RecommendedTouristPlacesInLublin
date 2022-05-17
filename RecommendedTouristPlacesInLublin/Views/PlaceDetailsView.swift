@@ -62,8 +62,8 @@ struct PlaceDetailsView: View {
                             Text("Dodaj opinię").buttonCustomStyle()
                         }
                     }.sheet(isPresented: $showAddOpinionSheet){
-                        AddOpinionView(placeName: self.placeName).environment(\.managedObjectContext, self.viewContext)
-                
+                        AddOpinionView(placeName: self.placeName, opinions: self.$opinions).environment(\.managedObjectContext, self.viewContext)
+                        
                     }
                 }
             }

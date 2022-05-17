@@ -16,6 +16,7 @@ struct AddOpinionView: View {
     @State private var userRate: Int16 = 0
     @State private var userContent: String = ""
     @State private var goodRate: Bool = true
+    @Binding var opinions: [Opinion]
     var body: some View {
         VStack{
             Text("Cześć TEST, czekamy na Twoją opinię!")
@@ -52,19 +53,25 @@ struct AddOpinionView: View {
         newOpinion.content  = userContent
         newOpinion.place  = getPlaceByName(viewContext: viewContext, placeName: placeName)
         newOpinion.user  = getUserByUserName(viewContext: viewContext, userName: userName)
+        
         do{
             try viewContext.save()
         }catch{
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+        self.addOpinions()
         self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    private func addOpinions(){
+        self.opinions = getPlaceByName(viewContext: viewContext, placeName: placeName).opinionArray
     }
 }
 
 
 struct AddOpinionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddOpinionView()
+        AddOpinionView(opinions: .constant([Opinion]()))
     }
 }
