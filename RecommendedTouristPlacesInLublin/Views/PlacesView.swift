@@ -19,11 +19,12 @@ struct PlacesView: View {
             List {
                 ForEach(getCategoryByName(viewContext: viewContext, categoryName: selectedCategoryName).placeArray, id: \.id){ place in
                     NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!)){
-                        HStack{
+                        HStack(){
                             Text(place.name!).multilineTextAlignment(.leading)
                             Spacer()
                             Image(systemName: "star.fill")
                             Text("Ocena: \(String(format: "%.2f", self.calculateRating(place: place)))").multilineTextAlignment(.trailing)
+                            
                         }
                     }
                 }
@@ -34,14 +35,9 @@ struct PlacesView: View {
     }
     
     func calculateRating(place: Place) -> Double{
-        var meanRating: Double = 0.0
         let opinions: [Opinion] = getPlaceByName(viewContext: viewContext, placeName: place.name!).opinionArray
+        return  Double(opinions.reduce(0) { $0 + $1.rating })/Double(opinions.count)
         
-        for i in 0..<opinions.count{
-            meanRating += Double(opinions[i].rating)
-        }
-        
-        return meanRating/Double(opinions.count)
     }
 }
 

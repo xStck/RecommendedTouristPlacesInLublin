@@ -13,6 +13,8 @@
 		C85245942833CC4900F9AF25 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85245922833CC4900F9AF25 /* Place+CoreDataClass.swift */; };
 		C85245952833CC4900F9AF25 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85245932833CC4900F9AF25 /* Place+CoreDataProperties.swift */; };
 		C85245982833CD0500F9AF25 /* databaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85245972833CD0500F9AF25 /* databaseFunctions.swift */; };
+		C852459D2833EE1B00F9AF25 /* RatingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852459C2833EE1B00F9AF25 /* RatingStar.swift */; };
+		C852459F2833EE4800F9AF25 /* FiveStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852459E2833EE4800F9AF25 /* FiveStarView.swift */; };
 		C86AE7B428325DF200A96D40 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86AE7B328325DF200A96D40 /* CategoryView.swift */; };
 		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
 		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
@@ -41,6 +43,8 @@
 		C85245922833CC4900F9AF25 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C85245932833CC4900F9AF25 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C85245972833CD0500F9AF25 /* databaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = databaseFunctions.swift; sourceTree = "<group>"; };
+		C852459C2833EE1B00F9AF25 /* RatingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStar.swift; sourceTree = "<group>"; };
+		C852459E2833EE4800F9AF25 /* FiveStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarView.swift; sourceTree = "<group>"; };
 		C86AE7B328325DF200A96D40 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendedTouristPlacesInLublin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 				C85245972833CD0500F9AF25 /* databaseFunctions.swift */,
 			);
 			path = DatabaseUtils;
+			sourceTree = "<group>";
+		};
+		C852459B2833EE0400F9AF25 /* Stars */ = {
+			isa = PBXGroup;
+			children = (
+				C852459C2833EE1B00F9AF25 /* RatingStar.swift */,
+				C852459E2833EE4800F9AF25 /* FiveStarView.swift */,
+			);
+			path = Stars;
 			sourceTree = "<group>";
 		};
 		C88DE3DE28314C03009378BF = {
@@ -157,6 +170,7 @@
 		C8D408DF28316D1400D95895 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C852459B2833EE0400F9AF25 /* Stars */,
 				C80D5698283169B900C461AD /* FooterView.swift */,
 				C8D408FB2831AE1E00D95895 /* HeaderView.swift */,
 			);
@@ -304,9 +318,11 @@
 				C80D5699283169BA00C461AD /* FooterView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
 				C8D583312833211900DD444B /* PlaceDetailsView.swift in Sources */,
+				C852459D2833EE1B00F9AF25 /* RatingStar.swift in Sources */,
 				C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */,
 				C8D408EB283180D700D95895 /* Category+CoreDataProperties.swift in Sources */,
 				C85245952833CC4900F9AF25 /* Place+CoreDataProperties.swift in Sources */,
+				C852459F2833EE4800F9AF25 /* FiveStarView.swift in Sources */,
 				C8D408FC2831AE1E00D95895 /* HeaderView.swift in Sources */,
 				C8D408EC283180D700D95895 /* User+CoreDataClass.swift in Sources */,
 				C8D408F82831907E00D95895 /* Opinion+CoreDataProperties.swift in Sources */,

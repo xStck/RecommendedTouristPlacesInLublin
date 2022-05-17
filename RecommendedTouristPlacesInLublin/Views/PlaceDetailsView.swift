@@ -17,29 +17,53 @@ struct PlaceDetailsView: View {
     var placeName: String = ""
     var placeLongitude: String = ""
     var placeLatitude: String = ""
+    @State var counter: Int = 0
     @State var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-    
+    @State var opinions: [Opinion] = []
     var body: some View {
         VStack(){
-            Spacer()
-            HStack(){
-                VStack(){
-                    Text("Opis").font(.largeTitle)
+            VStack(alignment: .leading){
+                Text("\(placeName)").font(.largeTitle).fontWeight(.bold).fixedSize(horizontal: false, vertical: true)
+                Spacer()
+                VStack(alignment: .leading){
+                    Text("OPIS").font(.title).foregroundColor(Color.blue)
                     Text(placeDesc)
-                }.onAppear(perform: self.addAnnotation)
-                VStack{
-                    Text("Lokalizacja").font(.largeTitle).multilineTextAlignment(.leading)
-                    MapCreator(myAnnotation: $myAnnotation).frame(width: CGFloat(200), height: CGFloat(200), alignment: .center)
+                }.onAppear(perform: self.addVariables)
+                Spacer()
+                VStack(alignment: .leading){
+                    Text("LOKALIZACJA").font(.title).foregroundColor(Color.blue)
+                    MapCreator(myAnnotation: $myAnnotation).frame(width: UIScreen.main.bounds.size.width, height: CGFloat(200), alignment: .center)
+                }
+                Spacer()
+                VStack(alignment: .leading){
+                    Text("OPINIE").font(.title).foregroundColor(Color.blue)
+                    VStack(alignment: .leading){
+                        if(!opinions.isEmpty){
+                            Text("Użytkownik: ").fontWeight(.bold)
+                            Text("\(opinions[counter].user!.username!)")
+                            Text("Ocena: ").fontWeight(.bold)
+                            Text("\(opinions[counter].rating)")
+                            Text("Opinia:").fontWeight(.bold)
+                            Text("\(opinions[counter].content!)")
+                        }
+                    }.gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({value in
+                        if value.translation.width < 0 && self.counter < self.getPlaceByName(viewContext: self.viewContext, placeName: self.placeName).opinionArray.count - 1{
+                            self.counter += 1
+                        }
+                        if value.translation.width > 0 && self.counter >= 1{
+                            self.counter -= 1
+                        }
+                    }))
                 }
             }
             Spacer()
-        }.navigationBarTitle(placeName)
+            FooterView()
+        }
     }
-    private func addAnnotation(){
-        print(placeLatitude)
-        print(placeLongitude)
+    private func addVariables(){
         self.myAnnotation = MyAnnotation(title: placeName, subtitle: "",
-                                         coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLongitude)!, longitude: CLLocationDegrees(placeLatitude)!))
+                                         coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLatitude)!, longitude: CLLocationDegrees(placeLongitude)!))
+        self.opinions = getPlaceByName(viewContext: viewContext, placeName: placeName).opinionArray
     }
 }
 

@@ -20,7 +20,13 @@ extension User {
     @NSManaged public var id: UUID?
     @NSManaged public var username: String?
     @NSManaged public var opinion: NSSet?
-
+    
+    public var opinionArray: [Opinion]{
+        let set = opinion as? Set<Opinion> ?? []
+        return set.sorted{
+            $0.rating < $1.rating
+        }
+    }
 }
 
 // MARK: Generated accessors for opinion
