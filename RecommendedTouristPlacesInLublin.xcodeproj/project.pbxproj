@@ -27,7 +27,7 @@
 		C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408F52831907E00D95895 /* Opinion+CoreDataClass.swift */; };
 		C8D408F82831907E00D95895 /* Opinion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408F62831907E00D95895 /* Opinion+CoreDataProperties.swift */; };
 		C8D408FC2831AE1E00D95895 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D408FB2831AE1E00D95895 /* HeaderView.swift */; };
-		C8D5832F2833011400DD444B /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D5832E2833011400DD444B /* PlaceView.swift */; };
+		C8D5832F2833011400DD444B /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D5832E2833011400DD444B /* PlacesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,7 @@
 		C8D408F52831907E00D95895 /* Opinion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C8D408F62831907E00D95895 /* Opinion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Opinion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8D408FB2831AE1E00D95895 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		C8D5832E2833011400DD444B /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		C8D5832E2833011400DD444B /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,7 @@
 			children = (
 				C88DE3F128314C04009378BF /* LoginView.swift */,
 				C86AE7B328325DF200A96D40 /* CategoryView.swift */,
-				C8D5832E2833011400DD444B /* PlaceView.swift */,
+				C8D5832E2833011400DD444B /* PlacesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 				C8D408F82831907E00D95895 /* Opinion+CoreDataProperties.swift in Sources */,
 				C8D408EA283180D700D95895 /* Category+CoreDataClass.swift in Sources */,
 				C88DE4062831616B009378BF /* customStyles.swift in Sources */,
-				C8D5832F2833011400DD444B /* PlaceView.swift in Sources */,
+				C8D5832F2833011400DD444B /* PlacesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

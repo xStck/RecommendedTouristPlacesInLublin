@@ -19,7 +19,7 @@ struct CategoryView: View {
             Spacer()
             List {
                 ForEach(categories, id: \.id){category in
-                    NavigationLink(destination: PlaceView(selectedCategoryName: category.name!)){
+                    NavigationLink(destination: PlacesView(selectedCategoryName: category.name!)){
                         Text(category.name!)
                     }
                 }
