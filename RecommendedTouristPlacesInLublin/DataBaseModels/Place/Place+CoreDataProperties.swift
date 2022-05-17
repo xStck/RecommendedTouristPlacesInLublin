@@ -2,7 +2,7 @@
 //  Place+CoreDataProperties.swift
 //  RecommendedTouristPlacesInLublin
 //
-//  Created by Dawid Nalepa on 15/05/2022.
+//  Created by Dawid Nalepa on 17/05/2022.
 //  Copyright © 2022 NalepaDawid_OgorzalekDaniel_OleszkoTomasz. All rights reserved.
 //
 //
@@ -19,18 +19,19 @@ extension Place {
 
     @NSManaged public var desc: String?
     @NSManaged public var id: UUID?
-    @NSManaged public var lattitude: String?
+    @NSManaged public var latitude: String?
     @NSManaged public var longitude: String?
     @NSManaged public var name: String?
     @NSManaged public var category: Category?
     @NSManaged public var opinion: NSSet?
-
+    
     public var opinionArray: [Opinion]{
         let set = opinion as? Set<Opinion> ?? []
         return set.sorted{
             $0.rating < $1.rating
         }
     }
+
 }
 
 // MARK: Generated accessors for opinion

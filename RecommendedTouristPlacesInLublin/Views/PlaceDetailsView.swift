@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import MapKit
 
 struct PlaceDetailsView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,24 +16,30 @@ struct PlaceDetailsView: View {
     var placeDesc: String = ""
     var placeName: String = ""
     var placeLongitude: String = ""
-    var placeLattitude: String = ""
+    var placeLatitude: String = ""
+    @State var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
+    
     var body: some View {
         VStack(){
-            Text("\(placeName)\n\(placeDesc)\n\(placeLongitude)\n\(placeLattitude)\n")
-        }
+            Spacer()
+            HStack(){
+                VStack(){
+                    Text("Opis").font(.largeTitle)
+                    Text(placeDesc)
+                }.onAppear(perform: self.addAnnotation)
+                VStack{
+                    Text("Lokalizacja").font(.largeTitle).multilineTextAlignment(.leading)
+                    MapCreator(myAnnotation: $myAnnotation).frame(width: CGFloat(200), height: CGFloat(200), alignment: .center)
+                }
+            }
+            Spacer()
+        }.navigationBarTitle(placeName)
     }
-    
-    func getPlaceByName(placeName: String) -> Place{
-        var aPlace: Place?
-        do{
-            let placeFetchRequest: NSFetchRequest<Place> = Place.fetchRequest()
-            placeFetchRequest.predicate = NSPredicate(format: "name == %@", placeName)
-            let fetchedResults = try viewContext.fetch(placeFetchRequest)
-            aPlace = fetchedResults.first!
-        }catch{
-            print("fetch task failed", error)
-        }
-        return aPlace!
+    private func addAnnotation(){
+        print(placeLatitude)
+        print(placeLongitude)
+        self.myAnnotation = MyAnnotation(title: placeName, subtitle: "",
+                                         coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLongitude)!, longitude: CLLocationDegrees(placeLatitude)!))
     }
 }
 
