@@ -12,7 +12,7 @@ public struct FiveStarView: View {
     var rating: Decimal
     var color: Color
     var backgroundColor: Color
-
+    
     public init(
         rating: Decimal,
         color: Color = .red,
@@ -22,7 +22,7 @@ public struct FiveStarView: View {
         self.color = color
         self.backgroundColor = backgroundColor
     }
-
+    
     public var body: some View {
         ZStack {
             BackgroundStars(backgroundColor)
@@ -41,11 +41,11 @@ private struct StarImage: View {
 
 private struct BackgroundStars: View {
     var color: Color
-
+    
     init(_ color: Color) {
         self.color = color
     }
-
+    
     var body: some View {
         HStack {
             ForEach(0..<5) { _ in
@@ -59,12 +59,12 @@ private struct BackgroundStars: View {
 private struct ForegroundStars: View {
     var rating: Decimal
     var color: Color
-
+    
     init(rating: Decimal, color: Color) {
         self.rating = rating
         self.color = color
     }
-
+    
     var body: some View {
         HStack {
             ForEach(0..<5) { index in

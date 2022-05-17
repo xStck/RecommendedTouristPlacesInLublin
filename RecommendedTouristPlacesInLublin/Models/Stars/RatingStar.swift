@@ -23,29 +23,29 @@ struct RatingStar: View {
         default: return mask
         }
     }
-
-
+    
+    
     init(rating: Decimal, color: Color, index: Int) {
         // Why decimal? Decoding floats and doubles is not accurate.
         self.rating = CGFloat(Double(rating.description) ?? 0)
         self.color = color
         self.index = index
     }
-
-
+    
+    
     var body: some View {
         GeometryReader { star in
             Image(systemName: "star.fill").resizable()
-            .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fill)
                 .foregroundColor(self.color)
                 .mask(
                     Rectangle()
                         .size(
                             width: star.size.width * self.maskRatio,
                             height: star.size.height
-                        )
+                    )
                     
-                )
+            )
         }
     }
 }

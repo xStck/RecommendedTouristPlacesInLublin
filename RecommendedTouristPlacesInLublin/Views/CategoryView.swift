@@ -13,13 +13,13 @@ struct CategoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.name, ascending: true)])
     private var categories: FetchedResults<Category>
-    
+    @Binding var userUserName: String
     var body: some View {
         VStack{
             Spacer()
             List {
                 ForEach(categories, id: \.id){category in
-                    NavigationLink(destination: PlacesView(selectedCategoryName: category.name!)){
+                    NavigationLink(destination: PlacesView(selectedCategoryName: category.name!, userUserName: self.$userUserName)){
                         Text(category.name!)
                     }
                 }
@@ -32,6 +32,6 @@ struct CategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        CategoryView(userUserName: .constant(""))
     }
 }

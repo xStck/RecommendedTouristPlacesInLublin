@@ -13,12 +13,13 @@ struct PlacesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var selectedCategoryName: String = ""
+    @Binding var userUserName: String
     var body: some View {
         VStack{
             Spacer()
             List {
                 ForEach(getCategoryByName(viewContext: viewContext, categoryName: selectedCategoryName).placeArray, id: \.id){ place in
-                    NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!)){
+                    NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!, userUserName: self.$userUserName)){
                         HStack(){
                             Text(place.name!).multilineTextAlignment(.leading)
                             Spacer()
@@ -43,6 +44,6 @@ struct PlacesView: View {
 
 struct PlacesView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesView()
+        PlacesView(userUserName: .constant(""))
     }
 }

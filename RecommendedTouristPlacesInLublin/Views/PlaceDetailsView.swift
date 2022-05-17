@@ -17,10 +17,11 @@ struct PlaceDetailsView: View {
     var placeName: String = ""
     var placeLongitude: String = ""
     var placeLatitude: String = ""
+    @Binding var userUserName: String
     @State private var showAddOpinionSheet: Bool = false
-    @State var counter: Int = 0
-    @State var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-    @State var opinions: [Opinion] = []
+    @State private var counter: Int = 0
+    @State private var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
+    @State private var opinions: [Opinion] = []
     var body: some View {
         VStack(){
             VStack(alignment: .leading){
@@ -44,8 +45,10 @@ struct PlaceDetailsView: View {
                             Text("\(opinions[counter].user!.username!)")
                             Text("Ocena: ").fontWeight(.bold)
                             Text("\(opinions[counter].rating)")
-                            Text("Opinia:").fontWeight(.bold)
-                            Text("\(opinions[counter].content! )")
+                            if(!opinions[counter].content!.trimmingCharacters(in: .whitespaces).isEmpty){
+                                Text("Opinia:").fontWeight(.bold)
+                                Text("\(opinions[counter].content! )")
+                            }
                         }
                     }.gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({value in
                         if value.translation.width < 0 && self.counter < self.getPlaceByName(viewContext: self.viewContext, placeName: self.placeName).opinionArray.count - 1{
@@ -62,7 +65,7 @@ struct PlaceDetailsView: View {
                             Text("Dodaj opinię").buttonCustomStyle()
                         }
                     }.sheet(isPresented: $showAddOpinionSheet){
-                        AddOpinionView(placeName: self.placeName, opinions: self.$opinions).environment(\.managedObjectContext, self.viewContext)
+                        AddOpinionView(placeName: self.placeName, userUserName: self.userUserName, opinions: self.$opinions).environment(\.managedObjectContext, self.viewContext)
                         
                     }
                 }
@@ -82,6 +85,6 @@ struct PlaceDetailsView: View {
 
 struct PlaceDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceDetailsView()
+        PlaceDetailsView(userUserName: .constant(""))
     }
 }

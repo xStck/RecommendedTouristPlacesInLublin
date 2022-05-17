@@ -12,15 +12,15 @@ import CoreData
 
 
 extension Opinion {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Opinion> {
         return NSFetchRequest<Opinion>(entityName: "Opinion")
     }
-
+    
     @NSManaged public var content: String?
     @NSManaged public var id: UUID?
     @NSManaged public var rating: Int16
     @NSManaged public var place: Place?
     @NSManaged public var user: User?
-
+    
 }

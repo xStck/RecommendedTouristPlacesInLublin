@@ -13,6 +13,7 @@ struct AddOpinionView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
     var placeName: String = ""
+    var userUserName: String = ""
     @State private var userRate: Int16 = 0
     @State private var userContent: String = ""
     @State private var goodRate: Bool = true
@@ -37,22 +38,21 @@ struct AddOpinionView: View {
             Text("Napisz co myślisz o tym lokalu: ")
             TextField("Opinia (opcjonalnie)", text: $userContent).underlineTextFieldStyle()
             
-         
-                Button(action: self.addOpinion){
-                    Text("Dodaj opinię")
-                }.disabled(self.goodRate)
+            
+            Button(action: self.addOpinion){
+                Text("Dodaj opinię")
+            }.disabled(self.goodRate)
             
         }
     }
     
     private func addOpinion(){
         let newOpinion = Opinion(context: viewContext)
-        let userName = "Andrzej"
         newOpinion.id = UUID()
         newOpinion.rating  = userRate
         newOpinion.content  = userContent
         newOpinion.place  = getPlaceByName(viewContext: viewContext, placeName: placeName)
-        newOpinion.user  = getUserByUserName(viewContext: viewContext, userName: userName)
+        newOpinion.user  = getUserByUserName(viewContext: viewContext, userName: userUserName)
         
         do{
             try viewContext.save()

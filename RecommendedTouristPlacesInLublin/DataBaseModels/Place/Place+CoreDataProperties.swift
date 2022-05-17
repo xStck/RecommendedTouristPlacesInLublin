@@ -12,11 +12,11 @@ import CoreData
 
 
 extension Place {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Place> {
         return NSFetchRequest<Place>(entityName: "Place")
     }
-
+    
     @NSManaged public var desc: String?
     @NSManaged public var id: UUID?
     @NSManaged public var latitude: String?
@@ -31,22 +31,22 @@ extension Place {
             $0.rating < $1.rating
         }
     }
-
+    
 }
 
 // MARK: Generated accessors for opinion
 extension Place {
-
+    
     @objc(addOpinionObject:)
     @NSManaged public func addToOpinion(_ value: Opinion)
-
+    
     @objc(removeOpinionObject:)
     @NSManaged public func removeFromOpinion(_ value: Opinion)
-
+    
     @objc(addOpinion:)
     @NSManaged public func addToOpinion(_ values: NSSet)
-
+    
     @objc(removeOpinion:)
     @NSManaged public func removeFromOpinion(_ values: NSSet)
-
+    
 }
