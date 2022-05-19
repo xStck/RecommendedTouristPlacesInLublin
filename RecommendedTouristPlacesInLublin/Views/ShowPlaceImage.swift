@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ShowPlaceImage: View {
+    
     var imageString: String = ""
     var placeName: String = ""
     @Binding var changeDayNight: Bool
@@ -18,11 +19,16 @@ struct ShowPlaceImage: View {
             
             ToggleView(changeDayNight: $changeDayNight)
             
-            Text(placeName).font(.largeTitle).dayNightStyleText(toggle: changeDayNight)
-            Image(imageString).resizable().aspectRatio(contentMode: .fit)
+            Text(placeName)
+                .font(.largeTitle)
+                .dayNightStyleText(toggle: changeDayNight)
+            Image(imageString).resizable()
+                .aspectRatio(contentMode: .fit)
             
-            
-        }.frame(height: UIScreen.main.bounds.size.height).dayNightStyleBackground(toggle: changeDayNight)
+            Spacer()
+        }
+        .frame(minHeight: 0, maxHeight: .infinity)
+        .dayNightStyleBackground(toggle: changeDayNight)
     }
 }
 

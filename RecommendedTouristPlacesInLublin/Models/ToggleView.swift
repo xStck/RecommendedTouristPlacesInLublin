@@ -11,12 +11,17 @@ import SwiftUI
 struct ToggleView: View {
     @Binding var changeDayNight: Bool
     var body: some View {
-        Toggle(isOn: $changeDayNight){
-            if(changeDayNight == false){
-                Text("Zmień na tryb nocny").dayNightStyleText(toggle: changeDayNight)
-            }else{
-                Text("Zmień na tryb dzienny").dayNightStyleText(toggle: changeDayNight)
+        HStack{
+            Toggle(isOn: $changeDayNight){
+                if(changeDayNight == false){
+                    Text("Zmień na tryb nocny")
+                        .dayNightStyleText(toggle: changeDayNight)
+                }else{
+                    Text("Zmień na tryb dzienny")
+                        .dayNightStyleText(toggle: changeDayNight)
+                }
             }
+            .padding()
         }
     }
 }

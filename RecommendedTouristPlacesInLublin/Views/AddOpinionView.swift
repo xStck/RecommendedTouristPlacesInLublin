@@ -10,22 +10,29 @@ import SwiftUI
 import CoreData
 
 struct AddOpinionView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
+    
     var placeName: String = ""
     var userUserName: String = ""
+    
     @State private var userRate: Int16 = 0
     @State private var userContent: String = ""
     @State private var goodRate: Bool = false
     @Binding var opinions: [Opinion]
     @Binding var changeDayNight: Bool
+    
     var body: some View {
         VStack{
             ToggleView(changeDayNight: $changeDayNight)
-            Spacer()
-            Text("Cześć \(userUserName), czekamy na Twoją opinię!").dayNightStyleText(toggle: changeDayNight)
             
-            Text("Podaj ocenę w skali od 1 do 5").dayNightStyleText(toggle: changeDayNight)
+            Spacer()
+            
+            Text("Cześć \(userUserName), czekamy na Twoją opinię!")
+                .dayNightStyleText(toggle: changeDayNight)
+            Text("Podaj ocenę w skali od 1 do 5")
+                .dayNightStyleText(toggle: changeDayNight)
             TextField("", text: Binding(
                 get:{String(self.userRate)},
                 set:{ self.userRate = Int16($0) ?? 0
@@ -36,24 +43,34 @@ struct AddOpinionView: View {
                         self.goodRate = false
                     }
             }
-            )).underlineTextFieldStyle()
+                )
+            )
+                .underlineTextFieldStyle()
             
-            Text("Napisz co myślisz o tym lokalu (opcjonalnie): ").dayNightStyleText(toggle: changeDayNight)
-            TextField("", text: $userContent).underlineTextFieldStyle()
+            Text("Napisz co myślisz o tym lokalu (opcjonalnie): ")
+                .dayNightStyleText(toggle: changeDayNight)
+            TextField("", text: $userContent)
+                .underlineTextFieldStyle()
             
             if(self.goodRate){
                 Button(action: self.addOpinion){
-                    Text("Dodaj opinię").buttonCustomStyle()
+                    Text("Dodaj opinię")
+                        .buttonCustomStyle()
                 }
             }else{
-                Text("Aby dodać opinię, podaj prawidłowe dane").foregroundColor(Color.red)
+                Text("Aby dodać opinię, podaj prawidłowe dane")
+                    .foregroundColor(Color.red)
             }
+            
             Spacer()
-        }.frame(minHeight: 0, maxHeight: .infinity).dayNightStyleBackground(toggle: changeDayNight)
+        }
+        .frame(minHeight: 0, maxHeight: .infinity)
+        .dayNightStyleBackground(toggle: changeDayNight)
     }
     
     private func addOpinion(){
         let newOpinion = Opinion(context: viewContext)
+        
         newOpinion.id = UUID()
         newOpinion.rating  = userRate
         newOpinion.content  = userContent

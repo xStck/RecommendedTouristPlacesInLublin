@@ -12,5 +12,5 @@ import CoreData
 
 @objc(Place)
 public class Place: NSManagedObject, Identifiable {
-
+    
 }

@@ -26,33 +26,41 @@ extension View {
     
     func dayNightStyleText(toggle: Bool) -> some View {
         if(toggle){
-            return self.foregroundColor(Color.white)
+            return self
+                .foregroundColor(Color.white)
         }else{
-            return self.foregroundColor(Color.black)
+            return self
+                .foregroundColor(Color.black)
         }
     }
     
     func dayNightStyleBackground(toggle: Bool) -> some View {
         if(toggle == false){
-            return self.background(Color.white)
+            return self
+                .background(Color.white)
         }else{
-            return self.background(Color.black)
+            return self
+                .background(Color.black)
         }
     }
     
     func dayNightStyleBackgroundList(toggle: Bool) -> some View {
         if(toggle == false){
-            return self.listRowBackground(Color.white)
+            return self
+                .listRowBackground(Color.white)
         }else{
-            return self.listRowBackground(Color.black)
+            return self
+                .listRowBackground(Color.black)
         }
     }
     
     func dayNightStyleBackgroundIcon(toggle: Bool) -> some View{
         if(toggle){
-            return self.foregroundColor(Color.white)
+            return self
+                .foregroundColor(Color.white)
         }else{
-            return self.foregroundColor(Color.black)
+            return self
+                .foregroundColor(Color.black)
         }
     }
 }

@@ -30,70 +30,106 @@ struct PlaceDetailsView: View {
         ScrollView{
             VStack(){
                 ToggleView(changeDayNight: $changeDayNight)
+                
                 Spacer()
-
+                
                 VStack(alignment: .leading){
-                    Text("\(placeName)").font(.largeTitle).fontWeight(.bold).fixedSize(horizontal: false, vertical: true).dayNightStyleText(toggle: changeDayNight)
-
-                    VStack(alignment: .leading){
-                        Text("OPIS").font(.title).foregroundColor(Color.blue)
-                        Text(placeDesc).dayNightStyleText(toggle: changeDayNight).fixedSize(horizontal: false, vertical: true)
-                    }.onAppear(perform: self.addVariables)
+                    Text("\(placeName)")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .dayNightStyleText(toggle: changeDayNight)
                     
                     VStack(alignment: .leading){
-                        Text("LOKALIZACJA").font(.title).foregroundColor(Color.blue)
+                        Text("OPIS")
+                            .font(.title)
+                            .foregroundColor(Color.blue)
+                        Text(placeDesc)
+                            .dayNightStyleText(toggle: changeDayNight)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .onAppear(perform: self.addVariables)
+                    
+                    VStack(alignment: .leading){
+                        Text("LOKALIZACJA")
+                            .font(.title)
+                            .foregroundColor(Color.blue)
+                        
                         MapCreator(myAnnotation: $myAnnotation, resize: $resize).frame(width: UIScreen.main.bounds.size.width, height: CGFloat(200), alignment: .center).gesture(TapGesture().onEnded(){_ in
                             self.resize -= 0.006
-                            print(self.resize)
                             if(self.resize < 0.006){
-                                    self.resize = 0.03
-                                }
+                                self.resize = 0.03
+                            }
                         })
-                    }.onAppear(perform: self.addOpinions)
-
+                    }
+                    .onAppear(perform: self.addOpinions)
+                    
                     VStack(alignment: .leading){
-                        Text("OPINIE").font(.title).foregroundColor(Color.blue)
-                        Text("(Przesuń palcem by zobaczyć kolejną opinię)").foregroundColor(Color.blue)
+                        Text("OPINIE")
+                            .font(.title)
+                            .foregroundColor(Color.blue)
+                        Text("(Przesuń palcem by zobaczyć kolejną opinię)")
+                            .foregroundColor(Color.blue)
+                        
                         VStack(alignment: .leading){
-                            
                             if(!opinions.isEmpty){
-                                Text("Użytkownik: ").fontWeight(.bold).dayNightStyleText(toggle: changeDayNight).frame(maxWidth: .infinity, alignment: .leading)
-                                Text("\(opinions[counter].user!.username!)").dayNightStyleText(toggle: changeDayNight)
-                                Text("Ocena: ").fontWeight(.bold).dayNightStyleText(toggle: changeDayNight)
-                                Text("\(opinions[counter].rating)").dayNightStyleText(toggle: changeDayNight)
+                                Text("Użytkownik: ")
+                                    .fontWeight(.bold)
+                                    .dayNightStyleText(toggle: changeDayNight)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text("\(opinions[counter].user!.username!)")
+                                    .dayNightStyleText(toggle: changeDayNight)
+                                Text("Ocena: ")
+                                    .fontWeight(.bold)
+                                    .dayNightStyleText(toggle: changeDayNight)
+                                Text("\(opinions[counter].rating)")
+                                    .dayNightStyleText(toggle: changeDayNight)
                                 if(!opinions[counter].content!.trimmingCharacters(in: .whitespaces).isEmpty){
-                                    Text("Opinia:").fontWeight(.bold).dayNightStyleText(toggle: changeDayNight)
-                                    Text("\(opinions[counter].content! )").dayNightStyleText(toggle: changeDayNight).fixedSize(horizontal: false, vertical: true)
+                                    Text("Opinia:")
+                                        .fontWeight(.bold)
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                    Text("\(opinions[counter].content! )")
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                        .fixedSize(horizontal: false, vertical: true)
                                 }
                             }
-                        }.frame(width: UIScreen.main.bounds.size.width).contentShape(Rectangle()).gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({value in
-                            if value.translation.width < 0 && self.counter < self.getPlaceByName(viewContext: self.viewContext, placeName: self.placeName).opinionArray.count - 1{
-                                self.counter += 1
-                            }
-                            if value.translation.width > 0 && self.counter >= 1{
-                                self.counter -= 1
-                            }
-                        }))
+                        }.frame(width: UIScreen.main.bounds.size.width)
+                            .contentShape(Rectangle())
+                            .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({value in
+                                if value.translation.width < 0 && self.counter < self.getPlaceByName(viewContext: self.viewContext, placeName: self.placeName).opinionArray.count - 1{
+                                    self.counter += 1
+                                }
+                                if value.translation.width > 0 && self.counter >= 1{
+                                    self.counter -= 1
+                                }
+                                }
+                                )
+                        )
                         
                         VStack{
                             Button(action: {
                                 self.showAddOpinionSheet.toggle()
                             }){
-                                Text("Dodaj opinię").buttonCustomStyle()
+                                Text("Dodaj opinię")
+                                    .buttonCustomStyle()
                             }
                         }.sheet(isPresented: $showAddOpinionSheet){
-                            AddOpinionView(placeName: self.placeName, userUserName: self.userUserName, opinions: self.$opinions, changeDayNight: self.$changeDayNight).environment(\.managedObjectContext, self.viewContext)
+                            AddOpinionView(placeName: self.placeName, userUserName: self.userUserName, opinions: self.$opinions, changeDayNight: self.$changeDayNight)
+                                .environment(\.managedObjectContext, self.viewContext)
                         }
                     }
                 }
+                
                 Spacer()
             }
-        }.dayNightStyleBackground(toggle: changeDayNight)
+        }
+        .dayNightStyleBackground(toggle: changeDayNight)
     }
+    
     private func addVariables(){
-        self.myAnnotation = MyAnnotation(title: placeName, subtitle: "",
-                                         coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLatitude)!, longitude: CLLocationDegrees(placeLongitude)!))
+        self.myAnnotation = MyAnnotation(title: placeName, subtitle: "",coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLatitude)!, longitude: CLLocationDegrees(placeLongitude)!))
     }
+    
     private func addOpinions(){
         self.opinions = getPlaceByName(viewContext: viewContext, placeName: placeName).opinionArray
     }

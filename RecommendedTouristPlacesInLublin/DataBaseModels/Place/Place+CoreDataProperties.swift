@@ -25,7 +25,6 @@ extension Place {
     @NSManaged public var category: Category?
     @NSManaged public var opinion: NSSet?
     @NSManaged public var imageName: String?
-    @NSManaged public var meanRating: Double
     
     public var opinionArray: [Opinion]{
         let set = opinion as? Set<Opinion> ?? []

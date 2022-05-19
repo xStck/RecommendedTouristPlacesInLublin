@@ -12,5 +12,5 @@ import CoreData
 
 @objc(Opinion)
 public class Opinion: NSManagedObject {
-
+    
 }

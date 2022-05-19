@@ -12,16 +12,15 @@ import CoreData
 struct CategoryView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.name, ascending: true)])
     
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.name, ascending: true)])
     private var categories: FetchedResults<Category>
     
     @Binding var userUserName: String
     @Binding var changeDayNight: Bool
-
+    
     var body: some View {
         VStack{
-            
             ToggleView(changeDayNight: $changeDayNight)
             
             Spacer()
@@ -29,15 +28,21 @@ struct CategoryView: View {
             List {
                 ForEach(categories, id: \.id){category in
                     NavigationLink(destination: PlacesView(selectedCategoryName: category.name!, userUserName: self.$userUserName, changeDayNight: self.$changeDayNight)){
-                        Text(category.name!).dayNightStyleText(toggle: self.changeDayNight)
+                        Text(category.name!)
+                            .dayNightStyleText(toggle: self.changeDayNight)
                     }
-                }.dayNightStyleBackgroundList(toggle: changeDayNight)
-            }.onAppear {
+                }
+                .dayNightStyleBackgroundList(toggle: changeDayNight)
+            }
+            .onAppear {
                 UITableView.appearance().backgroundColor = .clear
             }
+            
             Spacer()
-
-        }.navigationBarTitle("Kategorie", displayMode: .inline).dayNightStyleBackground(toggle: changeDayNight)
+            
+        }
+        .navigationBarTitle("Kategorie", displayMode: .inline)
+        .dayNightStyleBackground(toggle: changeDayNight)
     }
 }
 

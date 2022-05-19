@@ -13,13 +13,13 @@ struct MapCreator: UIViewRepresentable{
     
     @Binding var myAnnotation : MyAnnotation
     @Binding var resize: Double
+    
     func makeUIView(context: Context) -> MKMapView {
         let myMap = MKMapView(frame: .zero)
         return myMap
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-
         uiView.setRegion(MKCoordinateRegion(center: myAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: self.resize, longitudeDelta: self.resize)), animated: true)
         uiView.addAnnotations([myAnnotation])
     }
