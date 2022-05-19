@@ -12,23 +12,22 @@ import MapKit
 struct MapCreator: UIViewRepresentable{
     
     @Binding var myAnnotation : MyAnnotation
-    
+    @Binding var resize: Double
     func makeUIView(context: Context) -> MKMapView {
         let myMap = MKMapView(frame: .zero)
         return myMap
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: myAnnotation.coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+
+        uiView.setRegion(MKCoordinateRegion(center: myAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: self.resize, longitudeDelta: self.resize)), animated: true)
         uiView.addAnnotations([myAnnotation])
     }
 }
 
 struct MapCreator_Previews: PreviewProvider {
     static var previews: some View {
-        MapCreator(myAnnotation: .constant(MyAnnotation(title: "s", subtitle: "s", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))))
+        MapCreator(myAnnotation: .constant(MyAnnotation(title: "s", subtitle: "s", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))), resize: .constant(0.0))
     }
 }
 

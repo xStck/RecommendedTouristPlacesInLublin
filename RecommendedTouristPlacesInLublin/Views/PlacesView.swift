@@ -24,7 +24,7 @@ struct PlacesView: View {
         VStack{
             
             ToggleView(changeDayNight: $changeDayNight)
-
+            
             Spacer()
             
             if(!placesArr.isEmpty){
@@ -58,9 +58,8 @@ struct PlacesView: View {
                 VStack{
                     Text("Przesuń palcem w lewo lub w prawo by wyświetlić zdjęcie wybranego miejsca)").foregroundColor(Color.blue)
                 }.dayNightStyleBackgroundList(toggle: changeDayNight)
+                Spacer()
             }
-            
-            Spacer()
             
         }.onAppear(perform: addPlacesToArr).navigationBarTitle(selectedCategoryName).dayNightStyleBackground(toggle: changeDayNight).sheet(item: $selectedPlace){ place in
             ShowPlaceImage(imageString: place.imageName!, placeName: place.name!, changeDayNight: self.$changeDayNight).environment(\.managedObjectContext, self.viewContext)

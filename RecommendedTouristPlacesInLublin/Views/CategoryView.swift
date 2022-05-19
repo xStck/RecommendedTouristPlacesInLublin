@@ -35,7 +35,8 @@ struct CategoryView: View {
             }.onAppear {
                 UITableView.appearance().backgroundColor = .clear
             }
-            
+            Spacer()
+
         }.navigationBarTitle("Kategorie", displayMode: .inline).dayNightStyleBackground(toggle: changeDayNight)
     }
 }

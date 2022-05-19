@@ -19,9 +19,10 @@ struct PlaceDetailsView: View {
     var placeLatitude: String = ""
     
     @Binding var userUserName: String
+    @Binding var changeDayNight: Bool
     @State private var showAddOpinionSheet: Bool = false
     @State private var counter: Int = 0
-    @Binding var changeDayNight: Bool
+    @State private var resize: Double = 0.03
     @State private var myAnnotation = MyAnnotation(title: "", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     @State private var opinions: [Opinion] = []
     
@@ -29,26 +30,27 @@ struct PlaceDetailsView: View {
         ScrollView{
             VStack(){
                 ToggleView(changeDayNight: $changeDayNight)
-                
+                Spacer()
+
                 VStack(alignment: .leading){
                     Text("\(placeName)").font(.largeTitle).fontWeight(.bold).fixedSize(horizontal: false, vertical: true).dayNightStyleText(toggle: changeDayNight)
-                    
-                    Spacer()
-                    
+
                     VStack(alignment: .leading){
                         Text("OPIS").font(.title).foregroundColor(Color.blue)
                         Text(placeDesc).dayNightStyleText(toggle: changeDayNight).fixedSize(horizontal: false, vertical: true)
                     }.onAppear(perform: self.addVariables)
                     
-                    Spacer()
-                    
                     VStack(alignment: .leading){
                         Text("LOKALIZACJA").font(.title).foregroundColor(Color.blue)
-                        MapCreator(myAnnotation: $myAnnotation).frame(width: UIScreen.main.bounds.size.width, height: CGFloat(200), alignment: .center)
+                        MapCreator(myAnnotation: $myAnnotation, resize: $resize).frame(width: UIScreen.main.bounds.size.width, height: CGFloat(200), alignment: .center).gesture(TapGesture().onEnded(){_ in
+                            self.resize -= 0.006
+                            print(self.resize)
+                            if(self.resize < 0.006){
+                                    self.resize = 0.03
+                                }
+                        })
                     }.onAppear(perform: self.addOpinions)
-                    
-                    Spacer()
-                    
+
                     VStack(alignment: .leading){
                         Text("OPINIE").font(.title).foregroundColor(Color.blue)
                         Text("(Przesuń palcem by zobaczyć kolejną opinię)").foregroundColor(Color.blue)

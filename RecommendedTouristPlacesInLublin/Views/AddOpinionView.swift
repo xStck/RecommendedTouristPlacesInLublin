@@ -22,7 +22,7 @@ struct AddOpinionView: View {
     var body: some View {
         VStack{
             ToggleView(changeDayNight: $changeDayNight)
-            
+            Spacer()
             Text("Cześć \(userUserName), czekamy na Twoją opinię!").dayNightStyleText(toggle: changeDayNight)
             
             Text("Podaj ocenę w skali od 1 do 5").dayNightStyleText(toggle: changeDayNight)
@@ -43,13 +43,12 @@ struct AddOpinionView: View {
             
             if(self.goodRate){
                 Button(action: self.addOpinion){
-                    Text("Dodaj opinię").dayNightStyleText(toggle: changeDayNight).buttonCustomStyle()
+                    Text("Dodaj opinię").buttonCustomStyle()
                 }
             }else{
                 Text("Aby dodać opinię, podaj prawidłowe dane").foregroundColor(Color.red)
             }
-
-            
+            Spacer()
         }.frame(minHeight: 0, maxHeight: .infinity).dayNightStyleBackground(toggle: changeDayNight)
     }
     
