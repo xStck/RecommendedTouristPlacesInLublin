@@ -32,14 +32,15 @@ struct PlacesView: View {
                     ForEach(placesArr, id: \.id){ place in
                         NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!, userUserName: self.$userUserName, changeDayNight: self.$changeDayNight)){
                             
-                            HStack(){
-                                Text(place.name!).multilineTextAlignment(.leading)
+                            VStack(alignment: .leading){
+                                Text(place.name!)
                                     .dayNightStyleText(toggle: self.changeDayNight)
-                                Image(systemName: "star.fill")
-                                    .dayNightStyleBackgroundIcon(toggle: self.changeDayNight)
-                                Text("Ocena: \(String(format: "%.2f",self.calculateRating(place: place)))")
-                                    .multilineTextAlignment(.trailing)
-                                    .dayNightStyleText(toggle: self.changeDayNight)
+                                HStack{
+                                    Image(systemName: "star.fill")
+                                        .dayNightStyleBackgroundIcon(toggle: self.changeDayNight)
+                                    Text("Ocena: \(String(format: "%.2f",self.calculateRating(place: place)))")
+                                        .foregroundColor(Color.blue).fontWeight(.bold)
+                                }
                             }.gesture(DragGesture(minimumDistance: 10, coordinateSpace: .local).onEnded({value in
                                 if value.translation.width < 0{
                                     self.selectedPlace = place

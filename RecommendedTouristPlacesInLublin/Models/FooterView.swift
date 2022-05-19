@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FooterView: View {
     var body: some View {
-        HStack{
+        VStack{
             Text("Autorzy:")
             Text("Nalepa Dawid - 92963\nOleszko Tomasz - 92974\nOgorzałek Daniel - 92972")
         }

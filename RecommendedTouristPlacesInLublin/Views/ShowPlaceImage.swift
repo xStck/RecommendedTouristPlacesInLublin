@@ -19,6 +19,8 @@ struct ShowPlaceImage: View {
             
             ToggleView(changeDayNight: $changeDayNight)
             
+            Spacer()
+            
             Text(placeName)
                 .font(.largeTitle)
                 .dayNightStyleText(toggle: changeDayNight)

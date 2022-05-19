@@ -27,6 +27,7 @@ struct PlaceDetailsView: View {
     @State private var opinions: [Opinion] = []
     
     var body: some View {
+        NavigationView{
         ScrollView{
             VStack(){
                 ToggleView(changeDayNight: $changeDayNight)
@@ -34,11 +35,6 @@ struct PlaceDetailsView: View {
                 Spacer()
                 
                 VStack(alignment: .leading){
-                    Text("\(placeName)")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .dayNightStyleText(toggle: changeDayNight)
                     
                     VStack(alignment: .leading){
                         Text("OPIS")
@@ -49,6 +45,7 @@ struct PlaceDetailsView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .onAppear(perform: self.addVariables)
+                    .padding()
                     
                     VStack(alignment: .leading){
                         Text("LOKALIZACJA")
@@ -63,6 +60,7 @@ struct PlaceDetailsView: View {
                         })
                     }
                     .onAppear(perform: self.addOpinions)
+                    .padding()
                     
                     VStack(alignment: .leading){
                         Text("OPINIE")
@@ -117,13 +115,15 @@ struct PlaceDetailsView: View {
                             AddOpinionView(placeName: self.placeName, userUserName: self.userUserName, opinions: self.$opinions, changeDayNight: self.$changeDayNight)
                                 .environment(\.managedObjectContext, self.viewContext)
                         }
-                    }
+                    }.padding()
                 }
                 
                 Spacer()
             }
         }
         .dayNightStyleBackground(toggle: changeDayNight)
+        .navigationBarTitle(placeName, displayMode: .inline)
+        }
     }
     
     private func addVariables(){
