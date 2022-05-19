@@ -24,5 +24,35 @@ extension View {
             .cornerRadius(8)
     }
     
+    func dayNightStyleText(toggle: Bool) -> some View {
+        if(toggle){
+            return self.foregroundColor(Color.white)
+        }else{
+            return self.foregroundColor(Color.black)
+        }
+    }
     
+    func dayNightStyleBackground(toggle: Bool) -> some View {
+        if(toggle == false){
+            return self.background(Color.white)
+        }else{
+            return self.background(Color.black)
+        }
+    }
+    
+    func dayNightStyleBackgroundList(toggle: Bool) -> some View {
+        if(toggle == false){
+            return self.listRowBackground(Color.white)
+        }else{
+            return self.listRowBackground(Color.black)
+        }
+    }
+    
+    func dayNightStyleBackgroundIcon(toggle: Bool) -> some View{
+        if(toggle){
+            return self.foregroundColor(Color.white)
+        }else{
+            return self.foregroundColor(Color.black)
+        }
+    }
 }

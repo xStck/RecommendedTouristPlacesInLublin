@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB9C68D283522BB008E6D1B /* ShowPlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9C68C283522BB008E6D1B /* ShowPlaceImage.swift */; };
 		C80D5699283169BA00C461AD /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D5698283169B900C461AD /* FooterView.swift */; };
 		C852458F2833B13100F9AF25 /* MapCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852458E2833B13100F9AF25 /* MapCreator.swift */; };
 		C85245912833B15D00F9AF25 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85245902833B15D00F9AF25 /* MyAnnotation.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FB9C68C283522BB008E6D1B /* ShowPlaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlaceImage.swift; sourceTree = "<group>"; };
 		C80D5698283169B900C461AD /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		C852458E2833B13100F9AF25 /* MapCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCreator.swift; sourceTree = "<group>"; };
 		C85245902833B15D00F9AF25 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				C8D5832E2833011400DD444B /* PlacesView.swift */,
 				C8D583302833211900DD444B /* PlaceDetailsView.swift */,
 				C85245A0283411C200F9AF25 /* AddOpinionView.swift */,
+				3FB9C68C283522BB008E6D1B /* ShowPlaceImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			files = (
 				C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */,
 				C85245912833B15D00F9AF25 /* MyAnnotation.swift in Sources */,
+				3FB9C68D283522BB008E6D1B /* ShowPlaceImage.swift in Sources */,
 				C8D408ED283180D700D95895 /* User+CoreDataProperties.swift in Sources */,
 				C85245982833CD0500F9AF25 /* databaseFunctions.swift in Sources */,
 				C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */,

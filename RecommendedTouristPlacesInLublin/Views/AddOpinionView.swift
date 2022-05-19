@@ -16,34 +16,47 @@ struct AddOpinionView: View {
     var userUserName: String = ""
     @State private var userRate: Int16 = 0
     @State private var userContent: String = ""
-    @State private var goodRate: Bool = true
+    @State private var goodRate: Bool = false
+    @State private var changeDayNight: Bool = false
     @Binding var opinions: [Opinion]
     var body: some View {
         VStack{
-            Text("Cześć TEST, czekamy na Twoją opinię!")
+            Toggle(isOn: $changeDayNight){
+                if(changeDayNight == false){
+                    Text("Zmień na tryb nocny").dayNightStyleText(toggle: changeDayNight)
+                }else{
+                    Text("Zmień na tryb dzienny").dayNightStyleText(toggle: changeDayNight)
+                }
+            }
             
-            Text("Podaj ocenę w skali od 1 do 5")
-            TextField("Ocena", text: Binding(
+            Text("Cześć \(userUserName), czekamy na Twoją opinię!").dayNightStyleText(toggle: changeDayNight)
+            
+            Text("Podaj ocenę w skali od 1 do 5").dayNightStyleText(toggle: changeDayNight)
+            TextField("", text: Binding(
                 get:{String(self.userRate)},
                 set:{ self.userRate = Int16($0) ?? 0
                     if((self.userRate >= 1 && self.userRate <= 5)){
                         self.userRate = Int16($0)!
-                        self.goodRate = false
-                    }else{
                         self.goodRate = true
+                    }else{
+                        self.goodRate = false
                     }
             }
             )).underlineTextFieldStyle()
             
-            Text("Napisz co myślisz o tym lokalu: ")
-            TextField("Opinia (opcjonalnie)", text: $userContent).underlineTextFieldStyle()
+            Text("Napisz co myślisz o tym lokalu (opcjonalnie): ").dayNightStyleText(toggle: changeDayNight)
+            TextField("", text: $userContent).underlineTextFieldStyle()
             
+            if(self.goodRate){
+                Button(action: self.addOpinion){
+                    Text("Dodaj opinię").dayNightStyleText(toggle: changeDayNight).buttonCustomStyle()
+                }
+            }else{
+                Text("Aby dodać opinię, podaj prawidłowe dane").foregroundColor(Color.red)
+            }
+
             
-            Button(action: self.addOpinion){
-                Text("Dodaj opinię")
-            }.disabled(self.goodRate)
-            
-        }
+        }.frame(minHeight: 0, maxHeight: .infinity).dayNightStyleBackground(toggle: changeDayNight)
     }
     
     private func addOpinion(){

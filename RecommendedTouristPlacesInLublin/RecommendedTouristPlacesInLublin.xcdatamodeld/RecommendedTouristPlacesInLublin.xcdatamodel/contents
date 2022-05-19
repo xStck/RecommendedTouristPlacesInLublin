@@ -15,9 +15,11 @@
     <entity name="Place" representedClassName="Place" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="offsetToCustomSwipe" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="place" inverseEntity="Category"/>
         <relationship name="opinion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Opinion" inverseName="place" inverseEntity="Opinion"/>
     </entity>
@@ -29,7 +31,7 @@
     <elements>
         <element name="Category" positionX="-18.0703125" positionY="101.91796875" width="128" height="88"/>
         <element name="Opinion" positionX="-484.6328125" positionY="-217.61328125" width="128" height="118"/>
-        <element name="Place" positionX="-483.43359375" positionY="56.72265625" width="128" height="148"/>
+        <element name="Place" positionX="-483.43359375" positionY="56.72265625" width="128" height="178"/>
         <element name="User" positionX="-82.953125" positionY="-170.91796875" width="128" height="88"/>
     </elements>
 </model>

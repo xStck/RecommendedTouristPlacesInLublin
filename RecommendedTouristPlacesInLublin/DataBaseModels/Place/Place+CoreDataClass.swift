@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 @objc(Place)
-public class Place: NSManagedObject {
+public class Place: NSManagedObject, Identifiable {
 
 }
