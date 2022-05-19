@@ -40,12 +40,12 @@ struct LoginView: View {
                 Text("PODAJ NAZWĘ UŻYTKOWNIKA")
                     .font(.title)
                     .dayNightStyleText(toggle: changeDayNight)
-                    
+                
                 HStack(){
                     Image(systemName: "person.fill").dayNightStyleBackgroundIcon(toggle: self.changeDayNight)
                     TextField("", text: $userUserName)
-                    .underlineTextFieldStyle()
-                    .dayNightStyleText(toggle: changeDayNight)
+                        .underlineTextFieldStyle()
+                        .dayNightStyleText(toggle: changeDayNight)
                 }
                 if(userUserName.isEmpty){
                     Text("Aby przejść dalej, podaj swoją nazwę użytkownika")
@@ -62,7 +62,7 @@ struct LoginView: View {
                 
                 
                 VStack{
-                Image("Lublin_logo").resizable().aspectRatio(contentMode: .fit)
+                    Image("Lublin_logo").resizable().aspectRatio(contentMode: .fit)
                 }.frame(width: CGFloat(100), height: CGFloat(100))
                 
                 Spacer()

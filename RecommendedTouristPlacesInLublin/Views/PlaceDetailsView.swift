@@ -27,12 +27,13 @@ struct PlaceDetailsView: View {
     @State private var opinions: [Opinion] = []
     
     var body: some View {
-        NavigationView{
         ScrollView{
             VStack(){
                 ToggleView(changeDayNight: $changeDayNight)
                 
                 Spacer()
+                
+                Text(placeName).font(.title).dayNightStyleText(toggle: changeDayNight)
                 
                 VStack(alignment: .leading){
                     
@@ -71,21 +72,25 @@ struct PlaceDetailsView: View {
                         
                         VStack(alignment: .leading){
                             if(!opinions.isEmpty){
-                                Text("Użytkownik: ")
-                                    .fontWeight(.bold)
-                                    .dayNightStyleText(toggle: changeDayNight)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                Text("\(opinions[counter].user!.username!)")
-                                    .dayNightStyleText(toggle: changeDayNight)
-                                Text("Ocena: ")
-                                    .fontWeight(.bold)
-                                    .dayNightStyleText(toggle: changeDayNight)
-                                Text("\(opinions[counter].rating)")
-                                    .dayNightStyleText(toggle: changeDayNight)
+                                HStack{
+                                    Text("Użytkownik: ")
+                                        .fontWeight(.bold)
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                    Text("\(opinions[counter].user!.username!)")
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                }
+                                HStack{
+                                    Text("Ocena: ")
+                                        .fontWeight(.bold)
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                    Text("\(opinions[counter].rating)")
+                                        .dayNightStyleText(toggle: changeDayNight)
+                                }
                                 if(!opinions[counter].content!.trimmingCharacters(in: .whitespaces).isEmpty){
                                     Text("Opinia:")
                                         .fontWeight(.bold)
                                         .dayNightStyleText(toggle: changeDayNight)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                     Text("\(opinions[counter].content! )")
                                         .dayNightStyleText(toggle: changeDayNight)
                                         .fixedSize(horizontal: false, vertical: true)
@@ -104,14 +109,14 @@ struct PlaceDetailsView: View {
                                 )
                         )
                         
-                        VStack{
+                        VStack(){
                             Button(action: {
                                 self.showAddOpinionSheet.toggle()
                             }){
                                 Text("Dodaj opinię")
                                     .buttonCustomStyle()
                             }
-                        }.sheet(isPresented: $showAddOpinionSheet){
+                        }.frame(width: UIScreen.main.bounds.size.width ,alignment: .center).sheet(isPresented: $showAddOpinionSheet){
                             AddOpinionView(placeName: self.placeName, userUserName: self.userUserName, opinions: self.$opinions, changeDayNight: self.$changeDayNight)
                                 .environment(\.managedObjectContext, self.viewContext)
                         }
@@ -122,8 +127,6 @@ struct PlaceDetailsView: View {
             }
         }
         .dayNightStyleBackground(toggle: changeDayNight)
-        .navigationBarTitle(placeName, displayMode: .inline)
-        }
     }
     
     private func addVariables(){
