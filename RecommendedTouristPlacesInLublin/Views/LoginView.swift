@@ -33,23 +33,20 @@ struct LoginView: View {
     var body: some View {
         NavigationView{
             VStack(){
+                
                 HeaderView()
-                Toggle(isOn: $changeDayNight){
-                    if(changeDayNight == false){
-                        Text("Zmień na tryb nocny").dayNightStyleText(toggle: changeDayNight)
-                    }else{
-                        Text("Zmień na tryb dzienny").dayNightStyleText(toggle: changeDayNight)
-                    }
-                }
+                
+                ToggleView(changeDayNight: $changeDayNight)
+                
                 Spacer()
+                
                 Text("PODAJ NAZWĘ UŻYTKOWNIKA").font(.title).dayNightStyleText(toggle: changeDayNight)
                 TextField("", text: $userUserName).underlineTextFieldStyle().dayNightStyleText(toggle: changeDayNight)
                 
                 if(userUserName.isEmpty){
                     Text("Aby przejść dalej, podaj swoją nazwę użytkownika").foregroundColor(Color.red)
                 }else{
-                    
-                    NavigationLink(destination: CategoryView(userUserName: self.$userUserName)){
+                    NavigationLink(destination: CategoryView(userUserName: self.$userUserName, changeDayNight: $changeDayNight)){
                         Text("Przejdź dalej").buttonCustomStyle()
                     }.simultaneousGesture(TapGesture().onEnded{_ in
                         self.addUser()

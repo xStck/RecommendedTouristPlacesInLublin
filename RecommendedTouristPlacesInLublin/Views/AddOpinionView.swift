@@ -17,17 +17,11 @@ struct AddOpinionView: View {
     @State private var userRate: Int16 = 0
     @State private var userContent: String = ""
     @State private var goodRate: Bool = false
-    @State private var changeDayNight: Bool = false
     @Binding var opinions: [Opinion]
+    @Binding var changeDayNight: Bool
     var body: some View {
         VStack{
-            Toggle(isOn: $changeDayNight){
-                if(changeDayNight == false){
-                    Text("Zmień na tryb nocny").dayNightStyleText(toggle: changeDayNight)
-                }else{
-                    Text("Zmień na tryb dzienny").dayNightStyleText(toggle: changeDayNight)
-                }
-            }
+            ToggleView(changeDayNight: $changeDayNight)
             
             Text("Cześć \(userUserName), czekamy na Twoją opinię!").dayNightStyleText(toggle: changeDayNight)
             
@@ -85,6 +79,6 @@ struct AddOpinionView: View {
 
 struct AddOpinionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddOpinionView(opinions: .constant([Opinion]()))
+        AddOpinionView(opinions: .constant([Opinion]()), changeDayNight: .constant(false))
     }
 }

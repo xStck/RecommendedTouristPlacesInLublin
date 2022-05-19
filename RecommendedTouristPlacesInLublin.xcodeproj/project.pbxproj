@@ -18,6 +18,7 @@
 		C852459F2833EE4800F9AF25 /* FiveStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852459E2833EE4800F9AF25 /* FiveStarView.swift */; };
 		C85245A1283411C200F9AF25 /* AddOpinionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85245A0283411C200F9AF25 /* AddOpinionView.swift */; };
 		C86AE7B428325DF200A96D40 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86AE7B328325DF200A96D40 /* CategoryView.swift */; };
+		C8756531283667A500968100 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8756530283667A500968100 /* ToggleView.swift */; };
 		C88DE3EB28314C04009378BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EA28314C04009378BF /* AppDelegate.swift */; };
 		C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EC28314C04009378BF /* SceneDelegate.swift */; };
 		C88DE3F028314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C88DE3EE28314C04009378BF /* RecommendedTouristPlacesInLublin.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 		C852459E2833EE4800F9AF25 /* FiveStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarView.swift; sourceTree = "<group>"; };
 		C85245A0283411C200F9AF25 /* AddOpinionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOpinionView.swift; sourceTree = "<group>"; };
 		C86AE7B328325DF200A96D40 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		C8756530283667A500968100 /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		C88DE3E728314C03009378BF /* RecommendedTouristPlacesInLublin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendedTouristPlacesInLublin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88DE3EA28314C04009378BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88DE3EC28314C04009378BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				C852459B2833EE0400F9AF25 /* Stars */,
 				C80D5698283169B900C461AD /* FooterView.swift */,
 				C8D408FB2831AE1E00D95895 /* HeaderView.swift */,
+				C8756530283667A500968100 /* ToggleView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				C86AE7B428325DF200A96D40 /* CategoryView.swift in Sources */,
 				C80D5699283169BA00C461AD /* FooterView.swift in Sources */,
 				C88DE3ED28314C04009378BF /* SceneDelegate.swift in Sources */,
+				C8756531283667A500968100 /* ToggleView.swift in Sources */,
 				C8D583312833211900DD444B /* PlaceDetailsView.swift in Sources */,
 				C852459D2833EE1B00F9AF25 /* RatingStar.swift in Sources */,
 				C8D408F72831907E00D95895 /* Opinion+CoreDataClass.swift in Sources */,

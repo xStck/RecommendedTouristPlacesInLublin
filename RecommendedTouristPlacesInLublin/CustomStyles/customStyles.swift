@@ -19,9 +19,9 @@ extension View {
     func buttonCustomStyle() -> some View {
         self
             .foregroundColor(.white)
-            .padding()
+            .padding(4)
             .background(Color.blue)
-            .cornerRadius(8)
+            .cornerRadius(4)
     }
     
     func dayNightStyleText(toggle: Bool) -> some View {

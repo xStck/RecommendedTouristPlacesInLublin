@@ -13,46 +13,57 @@ struct PlacesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var selectedCategoryName: String = ""
+    
     @Binding var userUserName: String
     @State private var showSheet: Bool = false
     @State var placesArr: [Place] = []
-    @State private var changeDayNight: Bool = false
+    @Binding var changeDayNight: Bool
     @State private var selectedPlace: Place? = nil
+    
     var body: some View {
         VStack{
-            Toggle(isOn: $changeDayNight){
-                if(changeDayNight == false){
-                    Text("Zmień na tryb nocny").dayNightStyleText(toggle: changeDayNight)
-                }else{
-                    Text("Zmień na tryb dzienny").dayNightStyleText(toggle: changeDayNight)
-                }
-            }
+            
+            ToggleView(changeDayNight: $changeDayNight)
+
             Spacer()
+            
             if(!placesArr.isEmpty){
+                
                 List {
                     ForEach(placesArr, id: \.id){ place in
-                        NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!, userUserName: self.$userUserName)){
+                        
+                        NavigationLink(destination: PlaceDetailsView(placeDesc: place.desc!, placeName: place.name!, placeLongitude: place.longitude!, placeLatitude: place.latitude!, userUserName: self.$userUserName, changeDayNight: self.$changeDayNight)){
+                            
                             HStack(){
                                 Text(place.name!).multilineTextAlignment(.leading).dayNightStyleText(toggle: self.changeDayNight)
-                                Spacer()
                                 Image(systemName: "star.fill").dayNightStyleBackgroundIcon(toggle: self.changeDayNight)
-                                Text("Ocena: \(String(format: "%.2f", self.calculateRating(place: place)))").multilineTextAlignment(.trailing).dayNightStyleText(toggle: self.changeDayNight)
+                                Text("Ocena: \(String(format: "%.2f",self.calculateRating(place: place)))").multilineTextAlignment(.trailing).dayNightStyleText(toggle: self.changeDayNight)
                                 
                             }.gesture(DragGesture(minimumDistance: 10, coordinateSpace: .local).onEnded({value in
                                 if value.translation.width < 0{
                                     self.selectedPlace = place
+                                    self.showSheet.toggle()
+                                }else if value.translation.width > 0{
+                                    self.selectedPlace = place
+                                    self.showSheet.toggle()
                                 }
                             }))
+                            
                         }
-                    }.onDelete(perform: toggleSheet).dayNightStyleBackgroundList(toggle: changeDayNight)
+                    }.dayNightStyleBackgroundList(toggle: changeDayNight)
+                    
                 }.onAppear {
                     UITableView.appearance().backgroundColor = .clear
                 }
+                VStack{
+                    Text("Przesuń palcem w lewo lub w prawo by wyświetlić zdjęcie wybranego miejsca)").foregroundColor(Color.blue)
+                }.dayNightStyleBackgroundList(toggle: changeDayNight)
             }
+            
             Spacer()
-            FooterView()
+            
         }.onAppear(perform: addPlacesToArr).navigationBarTitle(selectedCategoryName).dayNightStyleBackground(toggle: changeDayNight).sheet(item: $selectedPlace){ place in
-            ShowPlaceImage(imageString: place.imageName!).environment(\.managedObjectContext, self.viewContext)
+            ShowPlaceImage(imageString: place.imageName!, placeName: place.name!, changeDayNight: self.$changeDayNight).environment(\.managedObjectContext, self.viewContext)
             
         }.dayNightStyleBackground(toggle: changeDayNight)
     }
@@ -74,6 +85,6 @@ struct PlacesView: View {
 
 struct PlacesView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesView(userUserName: .constant(""))
+        PlacesView(userUserName: .constant(""), changeDayNight: .constant(false))
     }
 }
