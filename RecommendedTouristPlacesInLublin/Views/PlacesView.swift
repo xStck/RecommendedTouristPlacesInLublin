@@ -17,7 +17,6 @@ struct PlacesView: View {
     
     @Binding var userUserName: String
     @Binding var changeDayNight: Bool
-    @State private var showSheet: Bool = false
     @State private var placesArr: [Place] = []
     @State private var selectedPlace: Place? = nil
     
@@ -44,10 +43,8 @@ struct PlacesView: View {
                             }.gesture(DragGesture(minimumDistance: 10, coordinateSpace: .local).onEnded({value in
                                 if value.translation.width < 0{
                                     self.selectedPlace = place
-                                    self.showSheet.toggle()
                                 }else if value.translation.width > 0{
                                     self.selectedPlace = place
-                                    self.showSheet.toggle()
                                 }
                                 }
                                 )
