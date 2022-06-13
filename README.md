@@ -1,2 +1,2 @@
 # RecommendedTouristPlacesInLublin
-Main app
+The project is about recommended tourist places in Lublin.
